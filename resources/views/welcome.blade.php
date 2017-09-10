@@ -83,11 +83,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Login</a>
-                    <a href="https://laracasts.com">register</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="login">Login</a>
+                    <a href="register">Register</a>
+                    <a href="build/sample">Builder</a>
+                    <a href="https://github.com/HarukiHashimoto/sys_lara">GitHub</a>
                 </div>
             </div>
         </div>
