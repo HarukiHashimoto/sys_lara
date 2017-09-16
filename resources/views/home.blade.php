@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('header')
+    @include('layouts.header.main_header')
+@endsection
+
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -20,4 +25,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+    @include('layouts.footer.main_footer')
 @endsection

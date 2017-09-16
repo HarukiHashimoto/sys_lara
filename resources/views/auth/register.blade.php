@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('header')
+    @include('layouts.header.main_header')
+@section('content')
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -75,3 +79,7 @@
     </div>
 </div>
 @endsection
+
+@section('header')
+    @include('layouts.header.main_footer')
+@section('content')
