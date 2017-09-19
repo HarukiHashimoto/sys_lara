@@ -80,6 +80,6 @@
 </div>
 @endsection
 
-@section('header')
-    @include('layouts.header.main_footer')
-@section('content')
+@section('footer')
+    @include('layouts.footer.main_footer')
+@endsection
