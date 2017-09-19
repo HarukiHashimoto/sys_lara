@@ -18,7 +18,7 @@ var nodes = new vis.DataSet([
     // {id: 101, label: '\n労働力不足', group: 'usr_node'},
     // {id: 102, label: '公共投資', group: 'usr_node'},
     // {id: 103, label: '移住者', group: 'usr_node'},
-    {id: 1000, label: '\n\n共通話題・異文化理解\nのためにマンガミュー\nジアムを作る', group: 'state'},
+    {id: 1000, label: "\n\n共通話題・異文化理解のためにマンガミュージアムを作る", group: 'state'},
     {id: 1001, label: '\n\n英語教育に重点的に\n予算を配分する', group: 'state'},
     {id: 1002, label: '\n\n景気を優先する', group: 'state'},
     // {id: 1003, label: '\n\nIRを誘致する', group: 'state'},
@@ -77,7 +77,11 @@ var data = {
 var options = {
     nodes: {
         color: '#e7e7e7',
-        margin: 10
+        margin: 10,
+        widthConstraint: {
+            minimum: 20,
+            maximum: 50
+        },
     },
     edges: {
         arrows: 'to',
@@ -92,7 +96,7 @@ var options = {
             color: '#5cb6ff',
             font: {
                 'size': 20
-            }
+            },
         },
         'usr_node': {
             shape: 'elipse',
@@ -107,8 +111,7 @@ var options = {
             font: {
                 'align': 'left',
                 'size': 20
-            }
-
+            },
         },
         'state': {
             shape: 'box',
@@ -282,7 +285,6 @@ network.on("click", function(params) {
     nodeId = params.nodes[0];
     console.log(nodeId);
     nodePosition = network.getPositions([nodeId]);
-    console.log(nodePosition[nodeId].x);
 
     $('.tag').on('click', function() {
         console.log(nodeId);
@@ -326,3 +328,35 @@ function genQnode() {
         {id: id, label: label, group: "instance"}
     ]);
 }
+
+  network.on("initRedraw", function () {
+    // do something like move some custom elements?
+  });
+  // network.on("beforeDrawing", function (ctx) {
+  //   var nodeId = 1;
+  //   var nodePosition = network.getPositions([nodeId]);
+  //   ctx.strokeStyle = '#A6D5F7';
+  //   ctx.fillStyle = '#294475';
+  //   ctx.circle((nodePosition[nodeId].x), (nodePosition[nodeId].y),50);
+  //   ctx.fill();
+  //   ctx.stroke();
+  // });
+  network.on("afterDrawing", function (ctx) {
+    var nodeId = 1101;
+    var nodePosition = network.getPositions([nodeId]);
+    var tagPosition = network.getBoundingBox(1101);
+    console.log(tagPosition);
+    ctx.strokeStyle = '#294475';
+    ctx.lineWidth = 4;
+    ctx.fillStyle = '#ffcf00';
+    ctx.fillRect(tagPosition.right-60, tagPosition.top+10, 60, 30);
+    ctx.fill();
+    ctx.stroke();
+
+    // テキストの挿入
+    ctx.font = "bold 15px sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillStyle = '#000000';
+    ctx.fillText('提案', (tagPosition.right-30), (tagPosition.top+25));
+
+  });
