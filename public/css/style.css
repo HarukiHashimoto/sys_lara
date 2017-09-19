@@ -1,0 +1,43 @@
+/**
+ * 自前ののCSS
+ */
+
+ div.modelArea {
+     height: 800px;
+     width: 90%;
+     margin: 50px;
+     border: #5c5c5c solid 1px;
+ }
+#operation {
+  font-size:28px;
+}
+#node-popUp {
+  display:none;
+  position:absolute;
+  top:350px;
+  left:170px;
+  z-index:299;
+  /*width:200px;
+  height:150px;*/
+  background-color: #f9f9f9;
+  border-style:solid;
+  border-width:3px;
+  border-color: #5394ed;
+  padding:10px;
+  text-align: center;
+}
+#edge-popUp {
+  display:none;
+  position:absolute;
+  top:350px;
+  left:170px;
+  z-index:299;
+  /*width:250px;
+  height:90px;*/
+  background-color: #f9f9f9;
+  border-style:solid;
+  border-width:3px;
+  border-color: #5394ed;
+  padding:10px;
+  text-align: center;
+}
