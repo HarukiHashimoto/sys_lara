@@ -18,14 +18,14 @@ var nodes = new vis.DataSet([
     // {id: 101, label: '\n労働力不足', group: 'usr_node'},
     // {id: 102, label: '公共投資', group: 'usr_node'},
     // {id: 103, label: '移住者', group: 'usr_node'},
-    {id: 1000, label: "\n\n共通話題・異文化理解のためにマンガミュージアムを作る", group: 'state'},
-    {id: 1001, label: '\n\n英語教育に重点的に\n予算を配分する', group: 'state'},
-    {id: 1002, label: '\n\n景気を優先する', group: 'state'},
+    {id: 4, label: "\n\n\n共通話題・異文化理解のためにマンガミュージアムを作る", group: 'state'},
+    {id: 5, label: '\n\n\n英語教育に重点的に\n予算を配分する', group: 'state'},
+    {id: 6, label: '\n\n\n景気を優先する', group: 'state'},
     // {id: 1003, label: '\n\nIRを誘致する', group: 'state'},
     // {id: 1004, label: '\n\n将来世代', group: 'state'},
     // {id: 1005, label: '\n\n英語でコミュニケー\nションが取れない', group: 'state'},
-    {id: 1100, label: '\n\n外国人にとって\n住みやすくするには？\n\n', group: 'instance'},
-    {id: 1101, label: '\n\n\n日本人が外国人と\n共生するには？\n\n', group: 'instance'},
+    {id: 7, label: '\n\n\n外国人にとって\n住みやすくするには？\n\n', group: 'instance'},
+    {id: 8, label: '\n\n\n日本人が外国人と\n共生するには？\n\n', group: 'instance'},
     // {id: 1102, label: '\n\n将来世代に還元できる\n政策は？\n\n', group: 'instance'},
     // {id: 1103, label: '\n\n「将来世代」に負担\nを強いることになるのでは？\n\n', group: 'instance'},
     // {id: 1104, label: '\n\n治安と景気のどちらを\n優先させますか？\n\n', group: 'instance'},
@@ -342,34 +342,44 @@ function genQnode() {
   //   ctx.stroke();
   // });
 
+// タグを格納する配列
+var tag = ['提案', '指針', '結論', '問題', '関与者', '懸念', '問い', '答え'];
+
 // タグの描画部分
 network.on("afterDrawing", function (ctx) {
-    var nodeId = 1101;
-    var nodePosition = network.getPositions([nodeId]);
-    var tagPosition = network.getBoundingBox(1101);
-
     if(nodes) {
-        console.log(nodes.groups);
-    }
-
-    // 初期値の設定
-    var x = 55;
-    var y = 10;
-    var width = 45;
-    var height = 25;
-
-    for (var i = 0; i < 8; i++) {
-        ctx.fillStyle = '#f7f7f7';
-        ctx.fillRect(tagPosition.right-x, tagPosition.top+y, width, height);
-        ctx.fill();
-
-        x = x + 50;
-        // 下段
-        if (i == 3) {
-            x = 55;
-            y = y + 30;
+        var haveTag = [];
+        for (var i = 0; i < nodes.length; i++) {
+            if(nodes._data[i].group == 'instance' || nodes._data[i].group == 'state') {
+                haveTag.push(nodes._data[i].id);
+            }
         }
     }
+
+    for (var i = 0; i < haveTag.length; i++) {
+        var nodeId = haveTag[i];
+        var nodePosition = network.getPositions([nodeId]);
+        var tagPosition = network.getBoundingBox(nodeId);
+
+        // 初期値の設定
+        var x = 55;
+        var y = 10;
+        var width = 45;
+        var height = 25;
+        for (var j = 0; j < 8; j++) {
+            ctx.fillStyle = '#f7f7f7';
+            ctx.fillRect(tagPosition.right-x, tagPosition.top+y, width, height);
+            ctx.fill();
+
+            x = x + 50;
+            // 下段
+            if (j == 3) {
+                x = 55;
+                y = y + 30;
+            }
+        }
+    }
+
 
     // // テキストの挿入
     // ctx.font = "bold 15px sans-serif";
