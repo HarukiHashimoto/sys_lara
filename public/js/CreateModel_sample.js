@@ -1,4 +1,4 @@
-// console.log(model.link_list[1].factor1);
+2525// console.log(model.link_list[1].factor1);
 // create an array with nodes
 
 function getUniqueStr(myStrong){
@@ -9,7 +9,7 @@ function getUniqueStr(myStrong){
 
 var nodes = new vis.DataSet([
     {id: 0, label: '治安', group: 'pre_node'},
-    {id: 1, label: '\n外国人', group: 'pre_node'},
+    {id: 1, label: '外国人', group: 'pre_node'},
     {id: 2, label: 'アクセス', group: 'pre_node'},
     {id: 3, label: '税収', group: 'pre_node'},
     // {id: 4, label: '雇用', group: 'pre_node'},
@@ -25,7 +25,7 @@ var nodes = new vis.DataSet([
     // {id: 1004, label: '\n\n将来世代', group: 'state'},
     // {id: 1005, label: '\n\n英語でコミュニケー\nションが取れない', group: 'state'},
     {id: 1100, label: '\n\n外国人にとって\n住みやすくするには？\n\n', group: 'instance'},
-    {id: 1101, label: '\n\n日本人が外国人と\n共生するには？\n\n', group: 'instance'},
+    {id: 1101, label: '\n\n\n日本人が外国人と\n共生するには？\n\n', group: 'instance'},
     // {id: 1102, label: '\n\n将来世代に還元できる\n政策は？\n\n', group: 'instance'},
     // {id: 1103, label: '\n\n「将来世代」に負担\nを強いることになるのでは？\n\n', group: 'instance'},
     // {id: 1104, label: '\n\n治安と景気のどちらを\n優先させますか？\n\n', group: 'instance'},
@@ -79,7 +79,7 @@ var options = {
         color: '#e7e7e7',
         margin: 10,
         widthConstraint: {
-            minimum: 205
+            minimum: 200
         },
     },
     edges: {
@@ -96,6 +96,7 @@ var options = {
             font: {
                 'size': 20
             },
+            widthConstraint: 50,
         },
         'usr_node': {
             shape: 'elipse',
@@ -328,9 +329,9 @@ function genQnode() {
     ]);
 }
 
-  network.on("initRedraw", function () {
+  // network.on("initRedraw", function () {
     // do something like move some custom elements?
-  });
+  // });
   // network.on("beforeDrawing", function (ctx) {
   //   var nodeId = 1;
   //   var nodePosition = network.getPositions([nodeId]);
@@ -340,69 +341,39 @@ function genQnode() {
   //   ctx.fill();
   //   ctx.stroke();
   // });
-  network.on("afterDrawing", function (ctx) {
+
+// タグの描画部分
+network.on("afterDrawing", function (ctx) {
     var nodeId = 1101;
     var nodePosition = network.getPositions([nodeId]);
     var tagPosition = network.getBoundingBox(1101);
-    console.log(tagPosition);
-    ctx.strokeStyle = '#294475';
-    ctx.lineWidth = 4;
-    ctx.fillStyle = '#ffcf00';
-    ctx.fillRect(tagPosition.right-55, tagPosition.top+10, 45, 25);
-    ctx.fill();
-    ctx.stroke();
-    // テキストの挿入
-    ctx.font = "bold 15px sans-serif";
-    ctx.textAlign = "center";
-    ctx.fillStyle = '#000000';
-    ctx.fillText('提案', (tagPosition.right-30), (tagPosition.top+25));
 
-    ctx.strokeStyle = '#294475';
-    ctx.lineWidth = 4;
-    ctx.fillStyle = '#ffcf00';
-    ctx.fillRect(tagPosition.right-105, tagPosition.top+10, 45, 25);
-    ctx.fill();
-    ctx.stroke();
+    if(nodes) {
+        console.log(nodes.groups);
+    }
 
-    ctx.strokeStyle = '#294475';
-    ctx.lineWidth = 4;
-    ctx.fillStyle = '#ffcf00';
-    ctx.fillRect(tagPosition.right-155, tagPosition.top+10, 45, 25);
-    ctx.fill();
-    ctx.stroke();
+    // 初期値の設定
+    var x = 55;
+    var y = 10;
+    var width = 45;
+    var height = 25;
 
-    ctx.strokeStyle = '#294475';
-    ctx.lineWidth = 4;
-    ctx.fillStyle = '#ffcf00';
-    ctx.fillRect(tagPosition.right-205, tagPosition.top+10, 45, 25);
-    ctx.fill();
-    ctx.stroke();
+    for (var i = 0; i < 8; i++) {
+        ctx.fillStyle = '#f7f7f7';
+        ctx.fillRect(tagPosition.right-x, tagPosition.top+y, width, height);
+        ctx.fill();
 
-    ctx.strokeStyle = '#294475';
-    ctx.lineWidth = 4;
-    ctx.fillStyle = '#ffcf00';
-    ctx.fillRect(tagPosition.right-60, tagPosition.top+45, 50, 30);
-    ctx.fill();
-    ctx.stroke();
+        x = x + 50;
+        // 下段
+        if (i == 3) {
+            x = 55;
+            y = y + 30;
+        }
+    }
 
-    ctx.strokeStyle = '#294475';
-    ctx.lineWidth = 4;
-    ctx.fillStyle = '#ffcf00';
-    ctx.fillRect(tagPosition.right-115, tagPosition.top+45, 50, 30);
-    ctx.fill();
-    ctx.stroke();
-
-    ctx.strokeStyle = '#294475';
-    ctx.lineWidth = 4;
-    ctx.fillStyle = '#ffcf00';
-    ctx.fillRect(tagPosition.right-170, tagPosition.top+45, 50, 30);
-    ctx.fill();
-    ctx.stroke();
-
-    ctx.strokeStyle = '#294475';
-    ctx.lineWidth = 4;
-    ctx.fillStyle = '#ffcf00';
-    ctx.fillRect(tagPosition.right-225, tagPosition.top+45, 50, 30);
-    ctx.fill();
-    ctx.stroke();
-  });
+    // // テキストの挿入
+    // ctx.font = "bold 15px sans-serif";
+    // ctx.textAlign = "center";
+    // ctx.fillStyle = '#000000';
+    // ctx.fillText('提案', (tagPosition.right-30), (tagPosition.top+25));
+});
