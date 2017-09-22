@@ -79,8 +79,7 @@ var options = {
         color: '#e7e7e7',
         margin: 10,
         widthConstraint: {
-            minimum: 20,
-            maximum: 50
+            minimum: 205
         },
     },
     edges: {
@@ -349,14 +348,61 @@ function genQnode() {
     ctx.strokeStyle = '#294475';
     ctx.lineWidth = 4;
     ctx.fillStyle = '#ffcf00';
-    ctx.fillRect(tagPosition.right-60, tagPosition.top+10, 60, 30);
+    ctx.fillRect(tagPosition.right-55, tagPosition.top+10, 45, 25);
     ctx.fill();
     ctx.stroke();
-
     // テキストの挿入
     ctx.font = "bold 15px sans-serif";
     ctx.textAlign = "center";
     ctx.fillStyle = '#000000';
     ctx.fillText('提案', (tagPosition.right-30), (tagPosition.top+25));
 
+    ctx.strokeStyle = '#294475';
+    ctx.lineWidth = 4;
+    ctx.fillStyle = '#ffcf00';
+    ctx.fillRect(tagPosition.right-105, tagPosition.top+10, 45, 25);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.strokeStyle = '#294475';
+    ctx.lineWidth = 4;
+    ctx.fillStyle = '#ffcf00';
+    ctx.fillRect(tagPosition.right-155, tagPosition.top+10, 45, 25);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.strokeStyle = '#294475';
+    ctx.lineWidth = 4;
+    ctx.fillStyle = '#ffcf00';
+    ctx.fillRect(tagPosition.right-205, tagPosition.top+10, 45, 25);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.strokeStyle = '#294475';
+    ctx.lineWidth = 4;
+    ctx.fillStyle = '#ffcf00';
+    ctx.fillRect(tagPosition.right-60, tagPosition.top+45, 50, 30);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.strokeStyle = '#294475';
+    ctx.lineWidth = 4;
+    ctx.fillStyle = '#ffcf00';
+    ctx.fillRect(tagPosition.right-115, tagPosition.top+45, 50, 30);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.strokeStyle = '#294475';
+    ctx.lineWidth = 4;
+    ctx.fillStyle = '#ffcf00';
+    ctx.fillRect(tagPosition.right-170, tagPosition.top+45, 50, 30);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.strokeStyle = '#294475';
+    ctx.lineWidth = 4;
+    ctx.fillStyle = '#ffcf00';
+    ctx.fillRect(tagPosition.right-225, tagPosition.top+45, 50, 30);
+    ctx.fill();
+    ctx.stroke();
   });
