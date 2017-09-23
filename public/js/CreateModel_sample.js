@@ -343,7 +343,58 @@ function genQnode() {
   // });
 
 // タグを格納する配列
-var tag = ['提案', '指針', '結論', '問題', '関与者', '懸念', '問い', '答え'];
+var tag = {
+    "data": [
+        {
+            'name': '提案',
+            'color': '#FFFC79',
+        },
+        {
+            'name': '指針',
+            'color': '#bf85d7'
+        },
+        {
+            'name': '結論',
+            'color': '#D6D6D6'
+        },
+        {
+            'name': '問題',
+            'color': '#7A81FF'
+        },
+        {
+            'name': '関与者',
+            'color': '#C0E9FF'
+        },
+        {
+            'name': '懸念',
+            'color': '#ffa8a8'
+        },
+        {
+            'name': '問い',
+            'color': '#4BE64A'
+        },
+        {
+            'name': '答え',
+            'color': '#F9AE64'
+        }
+    ]
+};
+console.log(tag.data[0].color);
+
+var tagList = {
+    "data": [
+        {
+            "id": 4,
+            "tag": [1, 3, 5]
+        },
+        {
+            "id": 5,
+            "tag": [2, 4]
+        },
+    ]
+};
+
+console.log(tagList.data.length);
 
 // タグの描画部分
 network.on("afterDrawing", function (ctx) {
@@ -366,6 +417,16 @@ network.on("afterDrawing", function (ctx) {
         var y = 10;
         var width = 45;
         var height = 25;
+
+        for (var j = 0; j < tagList.data.length; j++) {
+            if(tagList.data[j].id == nodeId) {
+                console.log(tagList.data[j]);
+
+            }
+        }
+
+
+
         for (var j = 0; j < 8; j++) {
             ctx.fillStyle = '#f7f7f7';
             ctx.fillRect(tagPosition.right-x, tagPosition.top+y, width, height);
