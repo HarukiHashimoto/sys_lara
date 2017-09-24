@@ -394,8 +394,6 @@ var tagList = {
     ]
 };
 
-console.log(tagList.data.length);
-
 // タグの描画部分
 network.on("afterDrawing", function (ctx) {
     if(nodes) {
@@ -417,15 +415,9 @@ network.on("afterDrawing", function (ctx) {
         var y = 10;
         var width = 45;
         var height = 25;
+        var j = 0;
 
-        for (var j = 0; j < tagList.data.length; j++) {
-            if(tagList.data[j].id == nodeId) {
-                console.log(tagList.data[j]);
-
-            }
-        }
-
-
+        console.log("ID: "+nodeId);
 
         for (var j = 0; j < 8; j++) {
             ctx.fillStyle = '#f7f7f7';
@@ -437,6 +429,31 @@ network.on("afterDrawing", function (ctx) {
             if (j == 3) {
                 x = 55;
                 y = y + 30;
+            }
+        }
+
+        for (var j = 0; j < tagList.data.length; j++) {
+
+            // 初期値の設定
+            var x = 55;
+            var y = 10;
+            var width = 45;
+            var height = 25;
+            if(tagList.data[j].id == nodeId) {
+                console.log(tagList.data[j].tag.length);
+                for (var k = 0; k < tagList.data[j].tag.length; k++) {
+                    clrId = tagList.data[j].tag[k];
+                    ctx.fillStyle = tag.data[clrId].color;
+                    ctx.fillRect(tagPosition.right-x, tagPosition.top+y, width, height);
+                    ctx.fill();
+
+                    x = x + 50;
+                    // 下段
+                    if (j == 3) {
+                        x = 55;
+                        y = y + 30;
+                    }
+                }
             }
         }
     }
