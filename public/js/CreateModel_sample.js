@@ -63,6 +63,10 @@ var nodes = new vis.DataSet([
 
 // create an array with edges
 var edges = new vis.DataSet([
+    {from: 2, to: 1},
+    {from: 1, to: 0, color: 'red'},
+    {from: 1, to: 3},
+
 ]);
 
 // create a network
@@ -87,7 +91,10 @@ var options = {
     },
     physics: {
         // enabled: false,
-        "timestep": 1,
+        barnesHut: {
+            centralGravity: 0.05,
+            springLength: 300,
+        },
     },
     groups: {
         'pre_node': {
@@ -432,6 +439,7 @@ network.on("afterDrawing", function (ctx) {
             }
         }
 
+
         for (var j = 0; j < tagList.data.length; j++) {
 
             // 初期値の設定
@@ -446,6 +454,12 @@ network.on("afterDrawing", function (ctx) {
                     ctx.fillStyle = tag.data[clrId].color;
                     ctx.fillRect(tagPosition.right-x, tagPosition.top+y, width, height);
                     ctx.fill();
+
+                    // テキストの挿入
+                    ctx.font = "bold 15px sans-serif";
+                    ctx.textAlign = "center";
+                    ctx.fillStyle = '#000000';
+                    ctx.fillText(tag.data[clrId].name, (tagPosition.right-x+25), (tagPosition.top+y+15));
 
                     x = x + 50;
                     // 下段
