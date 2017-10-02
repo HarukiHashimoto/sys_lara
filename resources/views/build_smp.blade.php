@@ -137,7 +137,12 @@
             </div>
         </div>
     </div>
+    <div id="example">
+        @{{ message }}
+
+    </div>
 </div>
+
 @endsection
 
 @section('footer')
