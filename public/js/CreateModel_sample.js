@@ -471,11 +471,4 @@ network.on("afterDrawing", function (ctx) {
             }
         }
     }
-
-
-    // // テキストの挿入
-    // ctx.font = "bold 15px sans-serif";
-    // ctx.textAlign = "center";
-    // ctx.fillStyle = '#000000';
-    // ctx.fillText('提案', (tagPosition.right-30), (tagPosition.top+25));
 });
