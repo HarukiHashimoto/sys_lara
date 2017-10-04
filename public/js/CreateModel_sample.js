@@ -30,35 +30,7 @@ var nodes = new vis.DataSet([
     // {id: 1103, label: '\n\n「将来世代」に負担\nを強いることになるのでは？\n\n', group: 'instance'},
     // {id: 1104, label: '\n\n治安と景気のどちらを\n優先させますか？\n\n', group: 'instance'},
     // {id: 1105, label: '\n\n誰が支払うのですか？\n\n', group: 'instance'},
-    // {id: 2000, label: '提案', group: 'tag_1'},
-    // {id: 2001, label: '提案', group: 'tag_1'},
-    // {id: 2002, label: '指針', group: 'tag_2'},
-    // {id: 2003, label: '結論', group: 'tag_3'},
-    // {id: 2004, label: '問題', group: 'tag_4'},
-    // {id: 2005, label: '問題', group: 'tag_4'},
-    // {id: 2006, label: '問題', group: 'tag_4'},
-    // {id: 2007, label: '関与者', group: 'tag_5'},
-    // {id: 2009, label: '関与者', group: 'tag_5'},
-    // {id: 2008, label: '懸念', group: 'tag_6'},
-    // {id: 2010, label: '問い', group: 'tag_7'},
-    // {id: 2011, label: '問い', group: 'tag_7'},
-    // {id: 2012, label: '問い', group: 'tag_7'},
-    // {id: 2013, label: '問い', group: 'tag_7'},
-    // {id: 2014, label: '問い', group: 'tag_7'},
-    // {id: 2015, label: '問い', group: 'tag_7'},
-    // {id: 2016, label: '答え', group: 'tag_8'},
-    // {id: 2017, label: '答え', group: 'tag_8'},
-    // {id: 2018, label: '答え', group: 'tag_8'},
-    // {id: 2019, label: '答え', group: 'tag_8'},
-    // {id: 2020, label: '答え', group: 'tag_8'},
-    // {id: 3000, label: 'V-b', group: 'tag_q'},
-    // {id: 3001, label: 'V-c', group: 'tag_q'},
-    // {id: 3002, label: 'V-c', group: 'tag_q'},
-    // {id: 3003, label: 'Ⅴ-c', group: 'tag_q'},
-    // {id: 3004, label: 'Ⅶ-a', group: 'tag_q'},
-    // {id: 3005, label: 'Ⅶ-b', group: 'tag_q'},
 ]);
-
 
 
 // create an array with edges
@@ -66,7 +38,6 @@ var edges = new vis.DataSet([
     {from: 2, to: 1},
     {from: 1, to: 0, color: 'red'},
     {from: 1, to: 3},
-
 ]);
 
 // create a network
@@ -199,6 +170,8 @@ var options = {
     }
 };
 
+console.log("aaa");
+
 // initialize your network!
 var network = new vis.Network(container, data, options);
 
@@ -282,59 +255,33 @@ function saveEdgeData(data, callback) {
   callback(data);
 }
 
+$('.q_list').on('click', genQnode);
+
+function genQnode() {
+    // id = this.id +"-"+ getUniqueStr();
+    id = nodes.length;
+    label = this.textContent;
+    title = this.id;
+    nodes.add([
+        {id: id, label: "\n\n\n"+label, group: "instance", title: title}
+    ]);
+    console.log(this.id);
+};
+
 $('body').on('load', function init() {
   setDefaultLocale();
   draw();
 });
 
-network.on("click", function(params) {
-    console.log(params);
-    nodeId = params.nodes[0];
-    console.log(nodeId);
-    nodePosition = network.getPositions([nodeId]);
-
-    $('.tag').on('click', function() {
-        console.log(nodeId);
-        console.log(this.textContent);
-        id = nodeId + this.value;
-        label = this.textContent;
-        group = this.value;
-        console.log(nodeId);
-        nodes.add([
-            {
-                id: id,
-                label: label,
-                group: group,
-                physics: true,
-                // x: nodePosition[nodeId].x,
-                // y: nodePosition[nodeId].y,
-            }
-        ]);
-        edges.add([
-            {
-                from: id,
-                to: nodeId,
-                physics: true,
-                arrows: {
-                    to: {
-                        type: 'circle',
-                        scaleFactor: 0.5,
-                    },
-                }
-            }
-        ]);
-    });
-});
-
-$('.q_list').on('click', genQnode);
-
-function genQnode() {
-    id = this.id +"-"+ getUniqueStr();
-    label = this.textContent;
-    nodes.add([
-        {id: id, label: label, group: "instance"}
-    ]);
-}
+// $('.q_list').on('click', genQnode);
+//
+// function genQnode() {
+//     id = this.id +"-"+ getUniqueStr();
+//     label = this.textContent;
+//     nodes.add([
+//         {id: id, label: label, group: "instance"}
+//     ]);
+// };
 
   // network.on("initRedraw", function () {
     // do something like move some custom elements?
@@ -405,7 +352,9 @@ var tagList = {
 network.on("afterDrawing", function (ctx) {
     if(nodes) {
         var haveTag = [];
+        console.log(nodes._data);
         for (var i = 0; i < nodes.length; i++) {
+            console.log(nodes._data[i].group);
             if(nodes._data[i].group == 'instance' || nodes._data[i].group == 'state') {
                 haveTag.push(nodes._data[i].id);
             }
