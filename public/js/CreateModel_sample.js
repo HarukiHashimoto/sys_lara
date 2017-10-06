@@ -1,4 +1,4 @@
-2525// console.log(model.link_list[1].factor1);
+// console.log(model.link_list[1].factor1);
 // create an array with nodes
 
 function getUniqueStr(myStrong){
@@ -169,8 +169,6 @@ var options = {
       }
     }
 };
-
-console.log("aaa");
 
 // initialize your network!
 var network = new vis.Network(container, data, options);
