@@ -271,29 +271,6 @@ $('body').on('load', function init() {
   draw();
 });
 
-// $('.q_list').on('click', genQnode);
-//
-// function genQnode() {
-//     id = this.id +"-"+ getUniqueStr();
-//     label = this.textContent;
-//     nodes.add([
-//         {id: id, label: label, group: "instance"}
-//     ]);
-// };
-
-  // network.on("initRedraw", function () {
-    // do something like move some custom elements?
-  // });
-  // network.on("beforeDrawing", function (ctx) {
-  //   var nodeId = 1;
-  //   var nodePosition = network.getPositions([nodeId]);
-  //   ctx.strokeStyle = '#A6D5F7';
-  //   ctx.fillStyle = '#294475';
-  //   ctx.circle((nodePosition[nodeId].x), (nodePosition[nodeId].y),50);
-  //   ctx.fill();
-  //   ctx.stroke();
-  // });
-
 // タグを格納する配列
 var tag = {
     "data": [
