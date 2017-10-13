@@ -314,14 +314,40 @@ var tagList = {
     "data": [
         {
             "id": 4,
-            "tag": [1, 3, 5]
+            "tag": ["1", "3", "5"]
         },
         {
             "id": 5,
-            "tag": [2, 4]
+            "tag": ["2", "4"]
         },
     ]
 };
+
+$('.tag').on('click', addTag);
+
+function addTag() {
+    var selectedId = network.getSelectedNodes()[0];
+    var tagId = this.value;
+    if (selectedId) {
+        for (var i = 0; i < tagList.data.length; i++) {
+            var tags = tagList.data[i].tag;
+            if (tagList.data[i].id == selectedId) {
+                /**
+                 * 配列内に指定の要素があれば要素番号を返す．
+                 * なければ[-1]を返す
+                 * @type number
+                 */
+                var res = tags.indexOf(tagId);
+
+                if (res != -1) {
+                    
+                }
+
+            }
+        }
+    }
+
+}
 
 // タグの描画部分
 network.on("afterDrawing", function (ctx) {

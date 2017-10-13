@@ -57,14 +57,14 @@
                 <h5>タグの付与</h5>
                 <p>※選択中のノードにタグを付与します．</p>
                 <div class="ui inverted segment">
-                    <button class="ui button inverted tag yellow" value="tag_1">提案</button>
-                    <button class="ui button inverted tag purple" value="tag_2">指針</button>
-                    <button class="ui button inverted tag grey" value="tag_3">結論</button>
-                    <button class="ui button inverted tag blue" value="tag_4">問題</button>
-                    <button class="ui button inverted tag teal" value="tag_5">関与者</button>
-                    <button class="ui button inverted tag red" value="tag_6">懸念</button>
-                    <button class="ui button inverted tag green" value="tag_7">問い</button>
-                    <button class="ui button inverted tag brown" value="tag_8">答え</button>
+                    <button class="ui button inverted tag yellow" value="0">提案</button>
+                    <button class="ui button inverted tag purple" value="1">指針</button>
+                    <button class="ui button inverted tag grey" value="2">結論</button>
+                    <button class="ui button inverted tag blue" value="3">問題</button>
+                    <button class="ui button inverted tag teal" value="4">関与者</button>
+                    <button class="ui button inverted tag red" value="5">懸念</button>
+                    <button class="ui button inverted tag green" value="6">問い</button>
+                    <button class="ui button inverted tag brown" value="7">答え</button>
                 </div>
                 <br>
                 <br>
