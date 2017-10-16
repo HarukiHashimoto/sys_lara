@@ -341,8 +341,39 @@ function addTag() {
 
                 if (res != -1) {
                     tags.splice(res);
+                    for (var j = 0; j < tagList.data.length; j++) {
+
+                        // 初期値の設定
+                        var x = 55;
+                        var y = 10;
+                        var width = 45;
+                        var height = 25;
+                        if(tagList.data[j].id == selectedId) {
+                            console.log(tagList.data[j].tag.length);
+                            for (var k = 0; k < tagList.data[j].tag.length; k++) {
+                                // ctxでバグ出てるなう
+                                clrId = tagList.data[j].tag[k];
+                                ctx.fillStyle = tag.data[clrId].color;
+                                ctx.fillRect(tagPosition.right-x, tagPosition.top+y, width, height);
+                                ctx.fill();
+
+                                // テキストの挿入
+                                ctx.font = "bold 15px sans-serif";
+                                ctx.textAlign = "center";
+                                ctx.fillStyle = '#000000';
+                                ctx.fillText(tag.data[clrId].name, (tagPosition.right-x+25), (tagPosition.top+y+15));
+
+                                x = x + 50;
+                                // 下段
+                                if (j == 3) {
+                                    x = 55;
+                                    y = y + 30;
+                                }
+                            }
+                        }
+                    }
                 } else {
-                    console.log("not match");;
+                    console.log("not match");
                 }
 
             }
