@@ -340,7 +340,9 @@ function addTag() {
                 var res = tags.indexOf(tagId);
 
                 if (res != -1) {
-                    
+                    tags.splice(res);
+                } else {
+                    console.log("not match");;
                 }
 
             }
