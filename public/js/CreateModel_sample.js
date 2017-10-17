@@ -328,6 +328,7 @@ $('.tag').on('click', addTag);
 function addTag() {
     var selectedId = network.getSelectedNodes()[0];
     var tagId = this.value;
+    var flag = 0;
     if (selectedId) {
         for (var i = 0; i < tagList.data.length; i++) {
             var tags = tagList.data[i].tag;
@@ -340,43 +341,23 @@ function addTag() {
                 var res = tags.indexOf(tagId);
 
                 if (res != -1) {
-                    tags.splice(res);
-                    for (var j = 0; j < tagList.data.length; j++) {
+                    tags.splice(res,1);
+                    network.redraw();
+                    flag = 1;
 
-                        // 初期値の設定
-                        var x = 55;
-                        var y = 10;
-                        var width = 45;
-                        var height = 25;
-                        if(tagList.data[j].id == selectedId) {
-                            console.log(tagList.data[j].tag.length);
-                            for (var k = 0; k < tagList.data[j].tag.length; k++) {
-                                // ctxでバグ出てるなう
-                                clrId = tagList.data[j].tag[k];
-                                ctx.fillStyle = tag.data[clrId].color;
-                                ctx.fillRect(tagPosition.right-x, tagPosition.top+y, width, height);
-                                ctx.fill();
-
-                                // テキストの挿入
-                                ctx.font = "bold 15px sans-serif";
-                                ctx.textAlign = "center";
-                                ctx.fillStyle = '#000000';
-                                ctx.fillText(tag.data[clrId].name, (tagPosition.right-x+25), (tagPosition.top+y+15));
-
-                                x = x + 50;
-                                // 下段
-                                if (j == 3) {
-                                    x = 55;
-                                    y = y + 30;
-                                }
-                            }
-                        }
-                    }
                 } else {
-                    console.log("not match");
+                    tags.push(tagId);
+                    network.redraw();
+                    flag = 2;
                 }
-
             }
+        }
+        if (flag == 0) {
+            console.log("FLAG:"+flag);
+            console.log(tagId);
+            tagList.data[i] = {"id": selectedId, "tag": [tagId]}
+            console.log(tagList.data);
+            network.redraw();
         }
     }
 
@@ -405,7 +386,6 @@ network.on("afterDrawing", function (ctx) {
         var y = 10;
         var width = 45;
         var height = 25;
-        var j = 0;
 
         console.log("ID: "+nodeId);
 
@@ -445,10 +425,12 @@ network.on("afterDrawing", function (ctx) {
                     ctx.fillText(tag.data[clrId].name, (tagPosition.right-x+25), (tagPosition.top+y+15));
 
                     x = x + 50;
+                    console.log("j:"+k);
                     // 下段
-                    if (j == 3) {
+                    if (k == 3) {
                         x = 55;
                         y = y + 30;
+                        console.log("aaa");
                     }
                 }
             }
