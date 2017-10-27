@@ -60,11 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-<<<<<<< HEAD
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
-=======
 /******/ 	return __webpack_require__(__webpack_require__.s = 9);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -75,11 +71,7 @@
 
 
 var bind = __webpack_require__(3);
-<<<<<<< HEAD
-var isBuffer = __webpack_require__(17);
-=======
 var isBuffer = __webpack_require__(18);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 /*global toString:true*/
 
@@ -389,11 +381,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(0);
-<<<<<<< HEAD
-var normalizeHeaderName = __webpack_require__(20);
-=======
 var normalizeHeaderName = __webpack_require__(21);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -483,11 +471,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-<<<<<<< HEAD
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
-=======
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(20)))
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 /***/ }),
 /* 2 */
@@ -542,21 +526,12 @@ module.exports = function bind(fn, thisArg) {
 
 
 var utils = __webpack_require__(0);
-<<<<<<< HEAD
-var settle = __webpack_require__(21);
-var buildURL = __webpack_require__(23);
-var parseHeaders = __webpack_require__(24);
-var isURLSameOrigin = __webpack_require__(25);
-var createError = __webpack_require__(5);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(26);
-=======
 var settle = __webpack_require__(22);
 var buildURL = __webpack_require__(24);
 var parseHeaders = __webpack_require__(25);
 var isURLSameOrigin = __webpack_require__(26);
 var createError = __webpack_require__(5);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(27);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -653,11 +628,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-<<<<<<< HEAD
-      var cookies = __webpack_require__(27);
-=======
       var cookies = __webpack_require__(28);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -741,11 +712,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-<<<<<<< HEAD
-var enhanceError = __webpack_require__(22);
-=======
 var enhanceError = __webpack_require__(23);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -803,12 +770,6 @@ module.exports = Cancel;
 
 /***/ }),
 /* 8 */
-<<<<<<< HEAD
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(9);
-module.exports = __webpack_require__(40);
-=======
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -902,15 +863,12 @@ module.exports = function normalizeComponent (
     options: options
   }
 }
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-=======
 __webpack_require__(10);
 module.exports = __webpack_require__(43);
 
@@ -919,7 +877,6 @@ module.exports = __webpack_require__(43);
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -927,15 +884,9 @@ module.exports = __webpack_require__(43);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-<<<<<<< HEAD
-__webpack_require__(10);
-
-window.Vue = __webpack_require__(35);
-=======
 __webpack_require__(11);
 
 window.Vue = __webpack_require__(36);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -943,31 +894,19 @@ window.Vue = __webpack_require__(36);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-<<<<<<< HEAD
-Vue.component('example', __webpack_require__(36));
-=======
 Vue.component('example', __webpack_require__(37));
 Vue.component('qlist', __webpack_require__(40));
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 var app = new Vue({
   el: '#app'
 });
 
 /***/ }),
-<<<<<<< HEAD
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-window._ = __webpack_require__(11);
-=======
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 window._ = __webpack_require__(12);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -976,15 +915,9 @@ window._ = __webpack_require__(12);
  */
 
 try {
-<<<<<<< HEAD
-  window.$ = window.jQuery = __webpack_require__(13);
-
-  __webpack_require__(14);
-=======
   window.$ = window.jQuery = __webpack_require__(14);
 
   __webpack_require__(15);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 } catch (e) {}
 
 /**
@@ -993,11 +926,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-<<<<<<< HEAD
-window.axios = __webpack_require__(15);
-=======
 window.axios = __webpack_require__(16);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -1031,11 +960,7 @@ if (token) {
 // });
 
 /***/ }),
-<<<<<<< HEAD
-/* 11 */
-=======
 /* 12 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -18124,17 +18049,10 @@ if (token) {
   }
 }.call(this));
 
-<<<<<<< HEAD
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(12)(module)))
-
-/***/ }),
-/* 12 */
-=======
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(13)(module)))
 
 /***/ }),
 /* 13 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -18162,11 +18080,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 13 */
-=======
 /* 14 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -28426,11 +28340,7 @@ return jQuery;
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 14 */
-=======
 /* 15 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports) {
 
 /*!
@@ -30813,15 +30723,6 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(16);
-
-/***/ }),
-/* 16 */
-=======
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30829,7 +30730,6 @@ module.exports = __webpack_require__(17);
 
 /***/ }),
 /* 17 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30837,11 +30737,7 @@ module.exports = __webpack_require__(17);
 
 var utils = __webpack_require__(0);
 var bind = __webpack_require__(3);
-<<<<<<< HEAD
-var Axios = __webpack_require__(18);
-=======
 var Axios = __webpack_require__(19);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 var defaults = __webpack_require__(1);
 
 /**
@@ -30876,22 +30772,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(7);
-<<<<<<< HEAD
-axios.CancelToken = __webpack_require__(33);
-=======
 axios.CancelToken = __webpack_require__(34);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 axios.isCancel = __webpack_require__(6);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-<<<<<<< HEAD
-axios.spread = __webpack_require__(34);
-=======
 axios.spread = __webpack_require__(35);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 module.exports = axios;
 
@@ -30900,11 +30788,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 17 */
-=======
 /* 18 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports) {
 
 /*!
@@ -30931,11 +30815,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 18 */
-=======
 /* 19 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30943,17 +30823,10 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(1);
 var utils = __webpack_require__(0);
-<<<<<<< HEAD
-var InterceptorManager = __webpack_require__(28);
-var dispatchRequest = __webpack_require__(29);
-var isAbsoluteURL = __webpack_require__(31);
-var combineURLs = __webpack_require__(32);
-=======
 var InterceptorManager = __webpack_require__(29);
 var dispatchRequest = __webpack_require__(30);
 var isAbsoluteURL = __webpack_require__(32);
 var combineURLs = __webpack_require__(33);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 
 /**
  * Create a new instance of Axios
@@ -31035,11 +30908,7 @@ module.exports = Axios;
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 19 */
-=======
 /* 20 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -31229,11 +31098,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 20 */
-=======
 /* 21 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31252,11 +31117,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 21 */
-=======
 /* 22 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31289,11 +31150,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 22 */
-=======
 /* 23 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31321,11 +31178,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 23 */
-=======
 /* 24 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31400,11 +31253,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 24 */
-=======
 /* 25 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31448,11 +31297,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 25 */
-=======
 /* 26 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31527,11 +31372,7 @@ module.exports = (
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 26 */
-=======
 /* 27 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31574,11 +31415,7 @@ module.exports = btoa;
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 27 */
-=======
 /* 28 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31638,11 +31475,7 @@ module.exports = (
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 28 */
-=======
 /* 29 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31701,22 +31534,14 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 29 */
-=======
 /* 30 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-<<<<<<< HEAD
-var transformData = __webpack_require__(30);
-=======
 var transformData = __webpack_require__(31);
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 var isCancel = __webpack_require__(6);
 var defaults = __webpack_require__(1);
 
@@ -31795,11 +31620,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 30 */
-=======
 /* 31 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31826,11 +31647,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 31 */
-=======
 /* 32 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31851,11 +31668,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 32 */
-=======
 /* 33 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31876,11 +31689,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 33 */
-=======
 /* 34 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31944,11 +31753,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 34 */
-=======
 /* 35 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31982,11 +31787,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 35 */
-=======
 /* 36 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42186,19 +41987,11 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-<<<<<<< HEAD
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(37)
-=======
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(8)
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /* script */
 var __vue_script__ = __webpack_require__(38)
 /* template */
@@ -42240,106 +42033,6 @@ module.exports = Component.exports
 
 
 /***/ }),
-<<<<<<< HEAD
-/* 37 */
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-=======
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42388,20 +42081,12 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
           _c("div", { staticClass: "panel panel-default" }, [
             _c("div", { staticClass: "panel-heading" }, [
-<<<<<<< HEAD
-              _vm._v("Example Component")
-=======
               _vm._v("Eaaaaxample Component")
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "panel-body" }, [
               _vm._v(
-<<<<<<< HEAD
-                "\n                    I'm an example component!\n                "
-=======
                 "\n                    I'm an example component!asdfasdfadfasdfas\n                "
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
               )
             ])
           ])
@@ -42421,8 +42106,6 @@ if (false) {
 
 /***/ }),
 /* 40 */
-<<<<<<< HEAD
-=======
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -42699,7 +42382,6 @@ if (false) {
 
 /***/ }),
 /* 43 */
->>>>>>> 52086630cf8e9f57bc7f92d3f34f6d84fff0dbb2
 /***/ (function(module, exports) {
 
 throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: Missing binding /Applications/MAMP/htdocs/sys_lara/node_modules/node-sass/vendor/darwin-x64-57/binding.node\nNode Sass could not find a binding for your current environment: OS X 64-bit with Node.js 8.x\n\nFound bindings for the following environments:\n  - OS X 64-bit with Node.js 5.x\n\nThis usually happens because your environment has changed since running `npm install`.\nRun `npm rebuild node-sass --force` to build the binding for your current environment.\n    at module.exports (/Applications/MAMP/htdocs/sys_lara/node_modules/node-sass/lib/binding.js:15:13)\n    at Object.<anonymous> (/Applications/MAMP/htdocs/sys_lara/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (module.js:624:30)\n    at Object.Module._extensions..js (module.js:635:10)\n    at Module.load (module.js:545:32)\n    at tryModuleLoad (module.js:508:12)\n    at Function.Module._load (module.js:500:3)\n    at Module.require (module.js:568:17)\n    at require (internal/module.js:11:18)\n    at Object.<anonymous> (/Applications/MAMP/htdocs/sys_lara/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (module.js:624:30)\n    at Object.Module._extensions..js (module.js:635:10)\n    at Module.load (module.js:545:32)\n    at tryModuleLoad (module.js:508:12)\n    at Function.Module._load (module.js:500:3)\n    at Module.require (module.js:568:17)\n    at require (internal/module.js:11:18)\n    at loadLoader (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at runLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:170:18\n    at loadLoader (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/loadLoader.js:27:11)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Applications/MAMP/htdocs/sys_lara/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Applications/MAMP/htdocs/sys_lara/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Applications/MAMP/htdocs/sys_lara/node_modules/webpack/lib/NormalModule.js:275:15)\n    at Compilation.buildModule (/Applications/MAMP/htdocs/sys_lara/node_modules/webpack/lib/Compilation.js:149:10)\n    at moduleFactory.create (/Applications/MAMP/htdocs/sys_lara/node_modules/webpack/lib/Compilation.js:447:10)\n    at factory (/Applications/MAMP/htdocs/sys_lara/node_modules/webpack/lib/NormalModuleFactory.js:241:5)\n    at applyPluginsAsyncWaterfall (/Applications/MAMP/htdocs/sys_lara/node_modules/webpack/lib/NormalModuleFactory.js:94:13)\n    at /Applications/MAMP/htdocs/sys_lara/node_modules/tapable/lib/Tapable.js:268:11\n    at NormalModuleFactory.params.normalModuleFactory.plugin (/Applications/MAMP/htdocs/sys_lara/node_modules/webpack/lib/CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (/Applications/MAMP/htdocs/sys_lara/node_modules/tapable/lib/Tapable.js:272:13)\n    at resolver (/Applications/MAMP/htdocs/sys_lara/node_modules/webpack/lib/NormalModuleFactory.js:69:10)\n    at process.nextTick (/Applications/MAMP/htdocs/sys_lara/node_modules/webpack/lib/NormalModuleFactory.js:194:7)\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)");
