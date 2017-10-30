@@ -16,8 +16,7 @@ class BuildController extends Controller
 
     public function build_smp()
     {
-        echo auth::user();
-        log::info("111");
+        
         return view('build_smp');
     }
 }
