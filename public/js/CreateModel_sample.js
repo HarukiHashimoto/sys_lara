@@ -437,3 +437,20 @@ network.on("afterDrawing", function (ctx) {
         }
     }
 });
+
+
+// axion試用
+$('.save').on('click', saveJSON);
+
+function saveJSON() {
+    axios.post('save', {
+        sample: 'sample'
+    })
+    .then(function(response) {
+        console.log(response);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+    console.log("click & save!");
+}

@@ -8,4 +8,5 @@
 <script type='text/javascript' src="{{ asset('js/vis.js/dist/vis.min.js') }}"></script>
 <script type='text/javascript' src="{{ asset('js/CreateModel_sample.js') }}"></script>
 </body>
+
 </html>
