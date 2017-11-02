@@ -3,8 +3,14 @@
 namespace App\Http\Controllers;
 
 use Request;
+use Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+
+// オブジェクトをJSON形式へ変換する（日本語をunicodeのままで整形して．）
+function json_safe_encode($data){
+    return json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+}
 
 class BuildController extends Controller
 {
@@ -21,9 +27,12 @@ class BuildController extends Controller
 
     public function save_model()
     {
-        $smp = Request::input('sample');
-        echo $smp;
+        $smp = Request::all();
+        $arr = json_safe_encode($smp);
         log::info(auth::id());
-        // return auth::user();
+        $name = auth::id()."_".time();
+        $filePath = "UserModel/";
+        file_put_contents($filePath.$name.".json", $arr);
+        return $arr;
     }
 }

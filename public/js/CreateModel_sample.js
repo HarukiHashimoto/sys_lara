@@ -444,7 +444,9 @@ $('.save').on('click', saveJSON);
 
 function saveJSON() {
     axios.post('save', {
-        sample: 'sample'
+        nodes: nodes,
+        edges: edges,
+        tagList: tagList
     })
     .then(function(response) {
         console.log(response);

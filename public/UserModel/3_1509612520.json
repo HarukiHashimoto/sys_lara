@@ -1,0 +1,120 @@
+{
+    "nodes": {
+        "_options": [],
+        "_data": [
+            {
+                "id": 0,
+                "label": "治安",
+                "group": "pre_node"
+            },
+            {
+                "id": 1,
+                "label": "外国人",
+                "group": "pre_node"
+            },
+            {
+                "id": 2,
+                "label": "アクセス",
+                "group": "pre_node"
+            },
+            {
+                "id": 3,
+                "label": "税収",
+                "group": "pre_node"
+            },
+            {
+                "id": 4,
+                "label": "共通話題・異文化理解のためにマンガミュージアムを作る",
+                "group": "state"
+            },
+            {
+                "id": 5,
+                "label": "英語教育に重点的に\n予算を配分する",
+                "group": "state"
+            },
+            {
+                "id": 6,
+                "label": "景気を優先する",
+                "group": "state"
+            },
+            {
+                "id": 7,
+                "label": "外国人にとって\n住みやすくするには？",
+                "group": "instance"
+            },
+            {
+                "id": 8,
+                "label": "日本人が外国人と\n共生するには？",
+                "group": "instance"
+            }
+        ],
+        "length": 9,
+        "_fieldId": "id",
+        "_type": [],
+        "_subscribers": {
+            "add": [
+                []
+            ],
+            "update": [
+                []
+            ],
+            "remove": [
+                []
+            ]
+        }
+    },
+    "edges": {
+        "_options": [],
+        "_data": {
+            "739e6319-08a3-4e8a-b201-9f94cef07fb9": {
+                "from": 2,
+                "to": 1,
+                "id": "739e6319-08a3-4e8a-b201-9f94cef07fb9"
+            },
+            "0bcf573f-8a38-42c2-a770-1946d9a1aedb": {
+                "from": 1,
+                "to": 0,
+                "color": "red",
+                "id": "0bcf573f-8a38-42c2-a770-1946d9a1aedb"
+            },
+            "c7f4d34d-c007-4988-8165-6bdf531b593f": {
+                "from": 1,
+                "to": 3,
+                "id": "c7f4d34d-c007-4988-8165-6bdf531b593f"
+            }
+        },
+        "length": 3,
+        "_fieldId": "id",
+        "_type": [],
+        "_subscribers": {
+            "add": [
+                []
+            ],
+            "update": [
+                []
+            ],
+            "remove": [
+                []
+            ]
+        }
+    },
+    "tagList": {
+        "data": [
+            {
+                "id": 4,
+                "tag": [
+                    "1",
+                    "3",
+                    "5"
+                ]
+            },
+            {
+                "id": 5,
+                "tag": [
+                    "2",
+                    "4"
+                ]
+            }
+        ]
+    }
+}
