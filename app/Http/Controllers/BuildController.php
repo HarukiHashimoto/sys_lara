@@ -25,6 +25,10 @@ class BuildController extends Controller
         return view('build_smp');
     }
 
+    /**
+     * [モデルデータを受け取ってJSONファイルを書き出す]
+     * @return [Null] [.jsonを書き出す]
+     */
     public function save_model()
     {
         $smp = Request::all();
