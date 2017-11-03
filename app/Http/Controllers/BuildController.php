@@ -32,10 +32,17 @@ class BuildController extends Controller
     public function save_model()
     {
         $smp = Request::all();
+
+        // 受け取ったデータをJSON形式にする
         $arr = json_safe_encode($smp);
         log::info(auth::id());
+
+        // JSONファイルの名前は”ユーザID_タイムスタンプ”
         $name = auth::id()."_".time();
+
+        // JSONファイルの保存場所はpublic/UserModel
         $filePath = "UserModel/";
+
         file_put_contents($filePath.$name.".json", $arr);
         return $arr;
     }
