@@ -38,12 +38,21 @@ class BuildController extends Controller
         log::info(auth::id());
 
         // JSONファイルの名前は”ユーザID_タイムスタンプ”
-        $name = auth::id()."_".time();
+        $name = auth::id().time();
 
         // JSONファイルの保存場所はpublic/UserModel
         $filePath = "UserModel/";
 
+        foreach (glob($filePath."*.json") as $filename) {
+            echo "$filename size " . filesize($filename) . "\n";
+        }
+
         file_put_contents($filePath.$name.".json", $arr);
         return $arr;
     }
+
+    public function load_model()
+    {
+
+    }    
 }
