@@ -46,4 +46,21 @@ class BuildController extends Controller
         file_put_contents($filePath.$name.".json", $arr);
         return $arr;
     }
+
+    public function load_model()
+    {
+        $user_id = auth::id();
+        $filePath = "UserModel/".$user_id."_";
+
+        // ログインしているユーザーのモデルファイルを取得
+        $files = glob($filePath."*.json");
+
+        // ファイルを降順ソート
+        rsort($files);
+        print_r($files);
+
+        // ユーザーの最新のファイル内容を取得
+        $content = file_get_contents($files[0]);
+        echo $content;
+    }
 }
