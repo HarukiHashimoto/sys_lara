@@ -53,10 +53,6 @@ class BuildController extends Controller
 
     public function load_model()
     {
-<<<<<<< HEAD
-
-    }    
-=======
         $user_id = auth::id();
         $filePath = "UserModel/".$user_id."_";
 
@@ -71,5 +67,4 @@ class BuildController extends Controller
         $content = file_get_contents($files[0]);
         echo $content;
     }
->>>>>>> 9850e89ed542967df8eae72c4a69bb30e9287d14
 }
