@@ -75,7 +75,31 @@ class BuildController extends Controller
 
         // ログイン中のユーザー以外の作成したモデルを取得
         $files = glob($filePath."[!".$user_id."]_*.json");
+
+        // 降順ソートに
         rsort($files);
+
+        // 他ユーザー（１人目）の最新のモデルを取得，配列に格納
+        $filename = basename($files[0]);
+        $otherModels[0] = $filename;
+        // 取得したデータのユーザIDを保持
+        $id = strstr($filename, '_', true);
+        echo $id;
+        $j = 1;
+
+        // その他のユーザーの最新のデータも配列に格納する
+        for ($i=1; $i < count($files); $i++) {
+            $tmp_name = basename($files[$i]);
+            $tmp_id = strstr($tmp_name, '_', true);
+
+            // tmp_idと異なるidが初めて現れたものを配列に格納する
+            if ($id != $tmp_id) {
+                $id = $tmp_id;
+                $otherModels[$j] = $tmp_name;
+                $j++;
+            }
+        }
+        print_r($otherModels);
         print_r($files);
     }
 }
