@@ -174,6 +174,7 @@ var options = {
 var network = new vis.Network(container, data, options);
 
 function editNode(data, callback) {
+  document.getElementById('node-id').value = data.id;
   document.getElementById('node-label').value = data.label;
   document.getElementById('group').value = data.group;
   document.getElementById('node-saveButton').onclick = saveNodeData.bind(this, data, callback);
@@ -193,6 +194,7 @@ function cancelNodeEdit(callback) {
 }
 
 function saveNodeData(data, callback) {
+  document.getElementById('node-id').value = data.id;
   data.label = document.getElementById('node-label').value;
   data.group = document.getElementById('group').value;
 
@@ -256,7 +258,6 @@ function saveEdgeData(data, callback) {
 $('.q_list').on('click', genQnode);
 
 function genQnode() {
-    // id = this.id +"-"+ getUniqueStr();
     id = nodes.length;
     label = this.textContent;
     title = this.id;
@@ -369,9 +370,11 @@ network.on("afterDrawing", function (ctx) {
         var haveTag = [];
         console.log(nodes._data);
         for (var i = 0; i < nodes.length; i++) {
-            console.log(nodes._data[i].group);
-            if(nodes._data[i].group == 'instance' || nodes._data[i].group == 'state') {
-                haveTag.push(nodes._data[i].id);
+            // console.log(nodes._data[i].group);
+            if (nodes._data[i]) {
+                if(nodes._data[i].group == 'instance' || nodes._data[i].group == 'state') {
+                    haveTag.push(nodes._data[i].id);
+                }
             }
         }
     }
@@ -430,7 +433,6 @@ network.on("afterDrawing", function (ctx) {
                     if (k == 3) {
                         x = 55;
                         y = y + 30;
-                        console.log("aaa");
                     }
                 }
             }
@@ -438,6 +440,11 @@ network.on("afterDrawing", function (ctx) {
     }
 });
 
+// $('.vis-delete').on('click', delNode);
+// function delNode() {
+//     // selectedId = network.getSelectedNodes()[0];
+//     console.log("aaaaaaa");
+// }
 
 // axion試用
 $('.save').on('click', saveJSON);

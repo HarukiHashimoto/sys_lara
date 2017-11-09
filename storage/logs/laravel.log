@@ -450,3 +450,16 @@
 #53 /Applications/MAMP/htdocs/sys_lara/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #54 {main}
 "} 
+[2017-11-09 05:32:52] local.INFO: 3  
+[2017-11-09 05:33:03] local.INFO: 3  
+[2017-11-09 06:06:30] local.INFO: 3  
+[2017-11-09 06:45:37] local.INFO: 3  
+[2017-11-09 06:45:37] local.INFO: 3  
+[2017-11-09 06:45:37] local.INFO: 3  
+[2017-11-09 06:45:38] local.INFO: 3  
+[2017-11-09 10:36:17] local.INFO: 3  
+[2017-11-09 10:38:06] local.INFO: 3  
+[2017-11-09 10:38:20] local.INFO: 3  
+[2017-11-09 11:39:04] local.INFO: 3  
+[2017-11-09 12:53:46] local.INFO: 3  
+[2017-11-09 12:54:36] local.INFO: 3  

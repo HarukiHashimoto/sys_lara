@@ -5,7 +5,7 @@
 <script type="text/javascript">
     $('.ui.dropdown').dropdown();
 </script>
-<script type='text/javascript' src="{{ asset('js/vis.js/dist/vis.min.js') }}"></script>
+<script type='text/javascript' src="{{ asset('js/vis.js/dist/vis.js') }}"></script>
 <script type='text/javascript' src="{{ asset('js/CreateModel_sample.js') }}"></script>
 </body>
 
