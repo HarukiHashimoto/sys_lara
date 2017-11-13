@@ -21,7 +21,7 @@
                       <td>id</td><td><input id="node-id" value="new value" /></td>
                     </tr>
                     <tr>
-                      <td>label</td><td><input id="node-label" value="new value" /></td>
+                      <td>内容</td><td><textarea id="node-label" value="new value" ></textarea></td>
                     </tr>
                     <tr>
                       <td>group</td><td><input id="group" value="usr_node" /></td>
