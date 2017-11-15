@@ -1,6 +1,7 @@
 // console.log(model.link_list[1].factor1);
 // create an array with nodes
 
+
 function getUniqueStr(myStrong){
  var strong = 1000;
  if (myStrong) strong = myStrong;
@@ -368,18 +369,28 @@ function addTag() {
 network.on("afterDrawing", function (ctx) {
     if(nodes) {
         var haveTag = [];
-        console.log(nodes._data);
+        console.log('length:'+nodes.length);
         for (var i = 0; i < nodes.length; i++) {
+            console.log(nodes._data[i]);
             // console.log(nodes._data[i].group);
-            if (nodes._data[i]) {
+            if (nodes._data[i] !== undefined) {
+                // console.log(nodes._data[i]);
                 if(nodes._data[i].group == 'instance' || nodes._data[i].group == 'state') {
                     haveTag.push(nodes._data[i].id);
+                    console.log('Tagsありノード'+nodes._data[i].id);
+                } else {
+                    console.log('Tags無いよ');
                 }
+            } else {
+                console.log(i+'undefined');
+                // i--;
             }
         }
+        console.log(i);
     }
-
+    console.log('Tags長さ'+haveTag.length);
     for (var i = 0; i < haveTag.length; i++) {
+        console.log('length_tag'+haveTag[i]);
         var nodeId = haveTag[i];
         var nodePosition = network.getPositions([nodeId]);
         var tagPosition = network.getBoundingBox(nodeId);
