@@ -6,6 +6,7 @@ use Request;
 use Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use App\UserModel;
 
 // オブジェクトをJSON形式へ変換する（日本語をunicodeのままで整形して．）
 function json_safe_encode($data){
@@ -32,10 +33,21 @@ class BuildController extends Controller
     public function save_model()
     {
         $smp = Request::all();
+        // log::info($smp);
 
         // 受け取ったデータをJSON形式にする
         $arr = json_safe_encode($smp);
         log::info(auth::id());
+        // log::info($arr);
+
+        $user_model = UserModel::first();
+        log::info($user_model);
+
+        $user_model = new UserModel;
+        $user_model->user_id = auth::id();
+        $user_model->model_json = $arr;
+        $user_model->save();
+
 
         // JSONファイルの名前は”ユーザID_タイムスタンプ”
         $name = auth::id()."_".time();
