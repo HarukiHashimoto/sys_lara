@@ -44,6 +44,8 @@ class BuildController extends Controller
         log::info($user_model);
 
         $user_model = new UserModel;
+        // ｍ_titleは教材ごとに変更する予定
+        $user_model->m_title = "sample";
         $user_model->user_id = auth::id();
         $user_model->model_json = $arr;
         $user_model->save();
@@ -66,18 +68,12 @@ class BuildController extends Controller
     public function load_model()
     {
         $user_id = auth::id();
-        $filePath = "UserModel/".$user_id."_";
+        $m_title = Request::post('title');
 
-        // ログインしているユーザーのモデルファイルを取得
-        $files = glob($filePath."*.json");
-
-        // ファイルを降順ソート
-        rsort($files);
-        print_r($files);
-
-        // ユーザーの最新のファイル内容を取得
-        $content = file_get_contents($files[0]);
-        echo $content;
+        // ログイン中のユーザーが作成したモデルで，最新のものを取得する
+        $res = UserModel::where('m_title', 'sample')->where('user_id', $user_id)->latest('created_at')->first();
+        $res = json_safe_encode($res->model_json);
+        return $res;
     }
 
     public function load_others_model()

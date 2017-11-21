@@ -27,6 +27,6 @@ Route::get('/build/sample', 'BuildController@build_smp')->name('build_smp');
 
 Route::post('/build/save', 'BuildController@save_model')->name('save_model');
 
-Route::get('/build/load', 'BuildController@load_model')->name('load_model');
+Route::post('/build/load', 'BuildController@load_model')->name('load_model');
 
 Route::get('/build/loadOthers', 'BuildController@load_others_model')->name('load_others_model');

@@ -370,7 +370,7 @@ network.on("afterDrawing", function (ctx) {
     if(nodes) {
         var haveTag = [];
         console.log('length:'+nodes.length);
-        for (var i = 0; i < nodes.length; i++) {
+        for (var i in nodes._data) {
             console.log(nodes._data[i]);
             // console.log(nodes._data[i].group);
             if (nodes._data[i] !== undefined) {
@@ -473,4 +473,26 @@ function saveJSON() {
         console.log(error);
     });
     console.log("click & save!");
+}
+
+var  a = loadJSON();
+console.log(a);
+
+function loadJSON() {
+    var path = location.href.split("/");
+    var title = path[path.length-1];
+    let res = {};
+    console.log(title);
+    axios.post('load', {
+        title: title
+    })
+    .then(function(response) {
+        res = JSON.stringify(response.data);
+        console.log(typeof(res));
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+    console.log("load!!!");
+    return res;
 }
