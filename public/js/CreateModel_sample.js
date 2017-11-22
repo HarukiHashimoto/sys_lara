@@ -9,36 +9,36 @@ function getUniqueStr(myStrong){
 }
 
 var nodes = new vis.DataSet([
-    {id: 0, label: '治安', group: 'pre_node'},
-    {id: 1, label: '外国人', group: 'pre_node'},
-    {id: 2, label: 'アクセス', group: 'pre_node'},
-    {id: 3, label: '税収', group: 'pre_node'},
-    // {id: 4, label: '雇用', group: 'pre_node'},
-    // {id: 5, label: '所得税', group: 'pre_node'},
-    // {id: 100, label: '\n人口減少', group: 'usr_node'},
-    // {id: 101, label: '\n労働力不足', group: 'usr_node'},
-    // {id: 102, label: '公共投資', group: 'usr_node'},
-    // {id: 103, label: '移住者', group: 'usr_node'},
-    {id: 4, label: "\n\n\n共通話題・異文化理解のためにマンガミュージアムを作る", group: 'state'},
-    {id: 5, label: '\n\n\n英語教育に重点的に\n予算を配分する', group: 'state'},
-    {id: 6, label: '\n\n\n景気を優先する', group: 'state'},
-    // {id: 1003, label: '\n\nIRを誘致する', group: 'state'},
-    // {id: 1004, label: '\n\n将来世代', group: 'state'},
-    // {id: 1005, label: '\n\n英語でコミュニケー\nションが取れない', group: 'state'},
-    {id: 7, label: '\n\n\n外国人にとって\n住みやすくするには？\n\n', group: 'instance'},
-    {id: 8, label: '\n\n\n日本人が外国人と\n共生するには？\n\n', group: 'instance'},
-    // {id: 1102, label: '\n\n将来世代に還元できる\n政策は？\n\n', group: 'instance'},
-    // {id: 1103, label: '\n\n「将来世代」に負担\nを強いることになるのでは？\n\n', group: 'instance'},
-    // {id: 1104, label: '\n\n治安と景気のどちらを\n優先させますか？\n\n', group: 'instance'},
-    // {id: 1105, label: '\n\n誰が支払うのですか？\n\n', group: 'instance'},
+    // {id: 0, label: '治安', group: 'pre_node'},
+    // {id: 1, label: '外国人', group: 'pre_node'},
+    // {id: 2, label: 'アクセス', group: 'pre_node'},
+    // {id: 3, label: '税収', group: 'pre_node'},
+    // // {id: 4, label: '雇用', group: 'pre_node'},
+    // // {id: 5, label: '所得税', group: 'pre_node'},
+    // // {id: 100, label: '\n人口減少', group: 'usr_node'},
+    // // {id: 101, label: '\n労働力不足', group: 'usr_node'},
+    // // {id: 102, label: '公共投資', group: 'usr_node'},
+    // // {id: 103, label: '移住者', group: 'usr_node'},
+    // {id: 4, label: "\n\n\n共通話題・異文化理解のためにマンガミュージアムを作る", group: 'state'},
+    // {id: 5, label: '\n\n\n英語教育に重点的に\n予算を配分する', group: 'state'},
+    // {id: 6, label: '\n\n\n景気を優先する', group: 'state'},
+    // // {id: 1003, label: '\n\nIRを誘致する', group: 'state'},
+    // // {id: 1004, label: '\n\n将来世代', group: 'state'},
+    // // {id: 1005, label: '\n\n英語でコミュニケー\nションが取れない', group: 'state'},
+    // {id: 7, label: '\n\n\n外国人にとって\n住みやすくするには？\n\n', group: 'instance'},
+    // {id: 8, label: '\n\n\n日本人が外国人と\n共生するには？\n\n', group: 'instance'},
+    // // {id: 1102, label: '\n\n将来世代に還元できる\n政策は？\n\n', group: 'instance'},
+    // // {id: 1103, label: '\n\n「将来世代」に負担\nを強いることになるのでは？\n\n', group: 'instance'},
+    // // {id: 1104, label: '\n\n治安と景気のどちらを\n優先させますか？\n\n', group: 'instance'},
+    // // {id: 1105, label: '\n\n誰が支払うのですか？\n\n', group: 'instance'},
 ]);
 
 
 // create an array with edges
 var edges = new vis.DataSet([
-    {from: 2, to: 1},
-    {from: 1, to: 0, color: 'red'},
-    {from: 1, to: 3},
+    // {from: 2, to: 1},
+    // {from: 1, to: 0, color: 'red'},
+    // {from: 1, to: 3},
 ]);
 
 // create a network
@@ -51,13 +51,13 @@ var data = {
 };
 
 var options = {
-    nodes: {
-        color: '#e7e7e7',
-        margin: 10,
-        widthConstraint: {
-            minimum: 200
-        },
-    },
+    // nodes: {
+    //     color: '#e7e7e7',
+    //     margin: 10,
+    //     widthConstraint: {
+    //         minimum: 200
+    //     },
+    // },
     edges: {
         arrows: 'to',
     },
@@ -90,6 +90,10 @@ var options = {
             font: {
                 'align': 'left',
                 'size': 20
+            },
+            height: {
+                minimum: 100,
+                valign: 'bottom',
             },
         },
         'state': {
@@ -475,24 +479,30 @@ function saveJSON() {
     console.log("click & save!");
 }
 
-var  a = loadJSON();
-console.log(a);
+var putParam = function(param) {
+    console.log(param);
+}
 
-function loadJSON() {
+var a = loadJSON(putParam);
+
+function loadJSON(callback) {
     var path = location.href.split("/");
     var title = path[path.length-1];
-    let res = {};
     console.log(title);
-    axios.post('load', {
+    var res;
+    var res = axios.post('load', {
         title: title
     })
     .then(function(response) {
-        res = JSON.stringify(response.data);
-        console.log(typeof(res));
+        var res = response.data;
+        var data = JSON.parse(response.data);
+        nodes.add(data.nodes._data);
+        edges.add(data.edges._data);
+        console.log(nodes);
+        callback(res);
     })
     .catch(function(error) {
         console.log(error);
     });
-    console.log("load!!!");
-    return res;
+    network.redraw();
 }

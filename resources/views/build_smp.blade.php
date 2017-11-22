@@ -80,13 +80,12 @@
             </div>
         </div>
     </div>
-    <div class="save ui centered grid">
-        <button class="save ui huge button">save</button>
+    <div class="ui centered grid">
+        <button class="save_btn ui huge button">save</button>
     </div>
     <br>
     <br>
     <br>
-
 
 </div>
 

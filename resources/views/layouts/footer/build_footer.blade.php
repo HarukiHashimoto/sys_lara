@@ -7,6 +7,7 @@
 </script>
 <script type='text/javascript' src="{{ asset('js/vis.js/dist/vis.js') }}"></script>
 <script type='text/javascript' src="{{ asset('js/CreateModel_sample.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/notification.js') }}"></script>
 </body>
 
 </html>
