@@ -51,40 +51,44 @@ var data = {
 };
 
 var options = {
-    // nodes: {
-    //     color: '#e7e7e7',
-    //     margin: 10,
-    //     widthConstraint: {
-    //         minimum: 200
-    //     },
-    // },
+    nodes: {
+        color: '#e7e7e7',
+        margin: {
+            top: 80
+        },
+        widthConstraint: {
+            minimum: 200
+        },
+    },
     edges: {
         arrows: 'to',
     },
     physics: {
-        // enabled: false,
         barnesHut: {
-            centralGravity: 0.05,
+            centralGravity: 0.2,
             springLength: 300,
         },
+        timestep: 3
     },
     groups: {
-        'given': {
+        given: {
             shape: 'elipse',
             color: '#5cb6ff',
             font: {
                 'size': 20
             },
-            widthConstraint: 50,
+            widthConstraint: {
+                minimum: 200
+            },
         },
-        'usr_node': {
+        usr_node: {
             shape: 'elipse',
             color: '#d2ffcc',
             font: {
                 'size': 20
             }
         },
-        'instance': {
+        instance: {
             shape: 'box',
             color: '#d4b5e0',
             font: {
@@ -96,51 +100,12 @@ var options = {
                 valign: 'bottom',
             },
         },
-        'state': {
+        state: {
             shape: 'box',
             color: '#bfbfbf',
             font: {
                 'align': 'left',
                 'size': 20
-            }
-        },
-        'tag_1': {
-            shape: 'box',
-            color: '#FFFC79'
-        },
-        'tag_2': {
-            shape: 'box',
-            color: '#bf85d7'
-        },
-        'tag_3': {
-            shape: 'box',
-            color: '#D6D6D6'
-        },
-        'tag_4': {
-            shape: 'box',
-            color: '#7A81FF'
-        },
-        'tag_5': {
-            shape: 'box',
-            color: '#C0E9FF'
-        },
-        'tag_6': {
-            shape: 'box',
-            color: '#ffa8a8'
-        },
-        'tag_7': {
-            shape: 'box',
-            color: '#4BE64A'
-        },
-        'tag_8': {
-            shape: 'box',
-            color: '#F9AE64'
-        },
-        'tag_q': {
-            shape: 'box',
-            color: '#404040',
-            font: {
-                color: '#dfdfdf'
             }
         },
     },
@@ -316,18 +281,18 @@ var tag = {
 };
 console.log(tag.data[0].color);
 
-var tagList = {
-    "data": [
-        {
-            "id": 4,
-            "tag": ["1", "3", "5"]
-        },
-        {
-            "id": 5,
-            "tag": ["2", "4"]
-        },
-    ]
-};
+// var tagList = {
+//     "data": [
+//         {
+//             "id": 4,
+//             "tag": ["1", "3", "5"]
+//         },
+//         {
+//             "id": 5,
+//             "tag": ["2", "4"]
+//         },
+//     ]
+// };
 
 $('.tag').on('click', addTag);
 
@@ -462,7 +427,7 @@ network.on("afterDrawing", function (ctx) {
 // }
 
 // axion試用
-$('.save').on('click', saveJSON);
+$('.save_btn').on('click', saveJSON);
 
 function saveJSON() {
     axios.post('save', {
@@ -496,13 +461,25 @@ function loadJSON(callback) {
     .then(function(response) {
         var res = response.data;
         var data = JSON.parse(response.data);
-        nodes.add(data.nodes._data);
-        edges.add(data.edges._data);
-        console.log(nodes);
+        addData(nodes, data.nodes._data);
+        addData(edges, data.edges._data);
+        tagList = data.tagList;
+        console.log(data);
         callback(res);
     })
     .catch(function(error) {
         console.log(error);
     });
     network.redraw();
+}
+
+/**
+ *
+ * @param {[DataSet]} target [description]
+ * @param {[JSON]} data   [description]
+ */
+function addData(target, data) {
+    for (var i in data) {
+        target.add(data[i]);
+    }
 }
