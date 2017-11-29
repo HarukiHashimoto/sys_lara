@@ -73,7 +73,10 @@ class BuildController extends Controller
         // ログイン中のユーザーが作成したモデルで，最新のものを取得する
         $res = UserModel::where('m_title', 'sample')->where('user_id', $user_id)->latest('created_at')->first();
         log::info($res);
+        $given = UserModel::where('m_title', 'sample')->where('user_id', 'given')->first();
+        log::info("これ".$given);
         $res = json_safe_encode($res->model_json);
+        log::info($res);
         return $res;
     }
 
