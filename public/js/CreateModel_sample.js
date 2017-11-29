@@ -462,7 +462,7 @@ network.on("afterDrawing", function (ctx) {
 // }
 
 // axion試用
-$('.save').on('click', saveJSON);
+$('.save_btn').on('click', saveJSON);
 
 function saveJSON() {
     axios.post('save', {
