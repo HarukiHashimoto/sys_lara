@@ -69,7 +69,7 @@ var options = {
         },
     },
     groups: {
-        'pre_node': {
+        'given': {
             shape: 'elipse',
             color: '#5cb6ff',
             font: {
