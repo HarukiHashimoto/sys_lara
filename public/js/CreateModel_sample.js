@@ -65,10 +65,10 @@ var options = {
     },
     physics: {
         barnesHut: {
-            centralGravity: 0.2,
-            springLength: 300,
+            centralGravity: 0.01,
+            springLength: 400,
         },
-        timestep: 3
+        timestep: 0.5
     },
     groups: {
         given: {
@@ -281,18 +281,14 @@ var tag = {
 };
 console.log(tag.data[0].color);
 
-// var tagList = {
-//     "data": [
-//         {
-//             "id": 4,
-//             "tag": ["1", "3", "5"]
-//         },
-//         {
-//             "id": 5,
-//             "tag": ["2", "4"]
-//         },
-//     ]
-// };
+var tagList = {
+    "data": [
+        {
+            "id": "",
+            "tag": []
+        },
+    ]
+};
 
 $('.tag').on('click', addTag);
 
@@ -384,10 +380,10 @@ network.on("afterDrawing", function (ctx) {
                 y = y + 30;
             }
         }
+        console.log(tagList);
 
-
-        for (var j = 0; j < tagList.data.length; j++) {
-
+        for (var j in tagList.data) {
+            console.log(j);
             // 初期値の設定
             var x = 55;
             var y = 10;
@@ -461,10 +457,18 @@ function loadJSON(callback) {
     .then(function(response) {
         var res = response.data;
         var data = JSON.parse(response.data);
-        addData(nodes, data.nodes._data);
-        addData(edges, data.edges._data);
-        tagList = data.tagList;
-        console.log(data);
+        console.log(data[0]);
+
+        if(data[1].id == "") {
+            addData(nodes, data[0].nodes._data);
+            addData(edges, data[0].edges._data);
+            console.log(data[1]);
+        } else {
+            addData(nodes, data[1].nodes._data);
+            addData(edges, data[1].edges._data);
+            tagList = data[1].tagList;
+            console.log(tagList);
+        }
         callback(res);
     })
     .catch(function(error) {

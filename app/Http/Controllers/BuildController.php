@@ -72,10 +72,16 @@ class BuildController extends Controller
 
         // ログイン中のユーザーが作成したモデルで，最新のものを取得する
         $res = UserModel::where('m_title', 'sample')->where('user_id', $user_id)->latest('created_at')->first();
-        log::info($res);
+        if($res == NULL) {
+            log::info('$resはNULLです');
+            $res = '{"id":""}';
+        } else {
+            $res = $res->model_json;
+        }
+        // givenノードの読み込み
         $given = UserModel::where('m_title', 'sample')->where('user_id', 'given')->first();
-        log::info("これ".$given);
-        $res = json_safe_encode($res->model_json);
+        $res = '['.$given->model_json.','.$res.']';
+        $res = json_safe_encode($res);
         log::info($res);
         return $res;
     }
