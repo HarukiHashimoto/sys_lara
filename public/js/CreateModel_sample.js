@@ -232,7 +232,7 @@ function genQnode() {
     label = this.textContent;
     title = this.id;
     nodes.add([
-        {id: id, label: "\n\n\n"+label, group: "instance", title: title}
+        {id: id, label: label, group: "instance", title: title}
     ]);
     console.log(this.id);
 };
