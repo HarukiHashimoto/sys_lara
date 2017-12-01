@@ -9,5 +9,5 @@ function notification() {
     }
     var n = new Notification("Save Your Model!!!",options);
     // タイムアウト設定
-    setTimeout(n.close.bind(n), 2000);
+    setTimeout(n.close.bind(n), 5000);
 }

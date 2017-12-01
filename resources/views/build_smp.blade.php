@@ -81,7 +81,8 @@
         </div>
     </div>
     <div class="ui centered grid">
-        <button class="save_btn ui huge button">save</button>
+        <button class="save_btn ui huge button primary">保存</button>
+        <button class="ref_btn ui huge button positive">参照</button>
     </div>
     <br>
     <br>
@@ -89,7 +90,18 @@
 
 </div>
 
+<div class="ui modal basic ref_modal">
+    <div class="header">
+        Browse Other Model
+    </div>
+    <div class="refModelArea" id="refModel">
+
+    </div>
+</div>
+
 @endsection
+
+
 
 @section('footer')
     @include('layouts.footer.build_footer')

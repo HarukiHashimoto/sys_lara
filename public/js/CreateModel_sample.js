@@ -66,9 +66,9 @@ var options = {
     physics: {
         barnesHut: {
             centralGravity: 0.01,
-            springLength: 400,
+            springLength: 300,
         },
-        timestep: 0.5
+        timestep: 4
     },
     groups: {
         given: {
@@ -331,90 +331,94 @@ function addTag() {
 }
 
 // タグの描画部分
-network.on("afterDrawing", function (ctx) {
-    if(nodes) {
-        var haveTag = [];
-        console.log('length:'+nodes.length);
-        for (var i in nodes._data) {
-            console.log(nodes._data[i]);
-            // console.log(nodes._data[i].group);
-            if (nodes._data[i] !== undefined) {
-                // console.log(nodes._data[i]);
-                if(nodes._data[i].group == 'instance' || nodes._data[i].group == 'state') {
-                    haveTag.push(nodes._data[i].id);
-                    console.log('Tagsありノード'+nodes._data[i].id);
+drawTags(network);
+function drawTags(netName) {
+    netName.on("afterDrawing", function (ctx) {
+        if(nodes) {
+            var haveTag = [];
+            console.log('length:'+nodes.length);
+            for (var i in nodes._data) {
+                console.log(nodes._data[i]);
+                // console.log(nodes._data[i].group);
+                if (nodes._data[i] !== undefined) {
+                    // console.log(nodes._data[i]);
+                    if(nodes._data[i].group == 'instance' || nodes._data[i].group == 'state') {
+                        haveTag.push(nodes._data[i].id);
+                        console.log('Tagsありノード'+nodes._data[i].id);
+                    } else {
+                        console.log('Tags無いよ');
+                    }
                 } else {
-                    console.log('Tags無いよ');
+                    console.log(i+'undefined');
+                    // i--;
                 }
-            } else {
-                console.log(i+'undefined');
-                // i--;
             }
+            console.log(i);
         }
-        console.log(i);
-    }
-    console.log('Tags長さ'+haveTag.length);
-    for (var i = 0; i < haveTag.length; i++) {
-        console.log('length_tag'+haveTag[i]);
-        var nodeId = haveTag[i];
-        var nodePosition = network.getPositions([nodeId]);
-        var tagPosition = network.getBoundingBox(nodeId);
+        console.log('Tags長さ'+haveTag.length);
+        for (var i = 0; i < haveTag.length; i++) {
+            console.log('length_tag'+haveTag[i]);
+            var nodeId = haveTag[i];
+            var nodePosition = netName.getPositions([nodeId]);
+            var tagPosition = netName.getBoundingBox(nodeId);
 
-        // 初期値の設定
-        var x = 55;
-        var y = 10;
-        var width = 45;
-        var height = 25;
-
-        console.log("ID: "+nodeId);
-
-        for (var j = 0; j < 8; j++) {
-            ctx.fillStyle = '#f7f7f7';
-            ctx.fillRect(tagPosition.right-x, tagPosition.top+y, width, height);
-            ctx.fill();
-
-            x = x + 50;
-            // 下段
-            if (j == 3) {
-                x = 55;
-                y = y + 30;
-            }
-        }
-        console.log(tagList);
-
-        for (var j in tagList.data) {
-            console.log(j);
             // 初期値の設定
             var x = 55;
             var y = 10;
             var width = 45;
             var height = 25;
-            if(tagList.data[j].id == nodeId) {
-                console.log(tagList.data[j].tag.length);
-                for (var k = 0; k < tagList.data[j].tag.length; k++) {
-                    clrId = tagList.data[j].tag[k];
-                    ctx.fillStyle = tag.data[clrId].color;
-                    ctx.fillRect(tagPosition.right-x, tagPosition.top+y, width, height);
-                    ctx.fill();
 
-                    // テキストの挿入
-                    ctx.font = "bold 15px sans-serif";
-                    ctx.textAlign = "center";
-                    ctx.fillStyle = '#000000';
-                    ctx.fillText(tag.data[clrId].name, (tagPosition.right-x+25), (tagPosition.top+y+15));
+            console.log("ID: "+nodeId);
 
-                    x = x + 50;
-                    console.log("j:"+k);
-                    // 下段
-                    if (k == 3) {
-                        x = 55;
-                        y = y + 30;
+            for (var j = 0; j < 8; j++) {
+                ctx.fillStyle = '#f7f7f7';
+                ctx.fillRect(tagPosition.right-x, tagPosition.top+y, width, height);
+                ctx.fill();
+
+                x = x + 50;
+                // 下段
+                if (j == 3) {
+                    x = 55;
+                    y = y + 30;
+                }
+            }
+            console.log(tagList);
+
+            for (var j in tagList.data) {
+                console.log(j);
+                // 初期値の設定
+                var x = 55;
+                var y = 10;
+                var width = 45;
+                var height = 25;
+                if(tagList.data[j].id == nodeId) {
+                    console.log(tagList.data[j].tag.length);
+                    for (var k = 0; k < tagList.data[j].tag.length; k++) {
+                        clrId = tagList.data[j].tag[k];
+                        ctx.fillStyle = tag.data[clrId].color;
+                        ctx.fillRect(tagPosition.right-x, tagPosition.top+y, width, height);
+                        ctx.fill();
+
+                        // テキストの挿入
+                        ctx.font = "bold 15px sans-serif";
+                        ctx.textAlign = "center";
+                        ctx.fillStyle = '#000000';
+                        ctx.fillText(tag.data[clrId].name, (tagPosition.right-x+25), (tagPosition.top+y+15));
+
+                        x = x + 50;
+                        console.log("j:"+k);
+                        // 下段
+                        if (k == 3) {
+                            x = 55;
+                            y = y + 30;
+                        }
                     }
                 }
             }
         }
-    }
-});
+    });
+};
+
 
 // $('.vis-delete').on('click', delNode);
 // function delNode() {

@@ -33,15 +33,11 @@ class BuildController extends Controller
     public function save_model()
     {
         $smp = Request::all();
-        // log::info($smp);
 
         // 受け取ったデータをJSON形式にする
         $arr = json_safe_encode($smp);
-        log::info(auth::id());
-        // log::info($arr);
 
         $user_model = UserModel::first();
-        log::info($user_model);
 
         $user_model = new UserModel;
         // ｍ_titleは教材ごとに変更する予定
@@ -73,7 +69,6 @@ class BuildController extends Controller
         // ログイン中のユーザーが作成したモデルで，最新のものを取得する
         $res = UserModel::where('m_title', 'sample')->where('user_id', $user_id)->latest('created_at')->first();
         if($res == NULL) {
-            log::info('$resはNULLです');
             $res = '{"id":""}';
         } else {
             $res = $res->model_json;
@@ -82,42 +77,32 @@ class BuildController extends Controller
         $given = UserModel::where('m_title', 'sample')->where('user_id', 'given')->first();
         $res = '['.$given->model_json.','.$res.']';
         $res = json_safe_encode($res);
-        log::info($res);
         return $res;
     }
 
     public function load_others_model()
     {
         $user_id = auth::id();
-        $filePath = "UserModel/";
-
         // ログイン中のユーザー以外の作成したモデルを取得
-        $files = glob($filePath."[!".$user_id."]_*.json");
+        $res = UserModel::select('user_id')
+                ->where('m_title', 'sample')
+                ->whereNotIn('user_id', [$user_id, 'given'])
+                ->groupBy('user_id')
+                ->get();
 
-        // 降順ソートに
-        rsort($files);
-
-        // 他ユーザー（１人目）の最新のモデルを取得，配列に格納
-        $filename = basename($files[0]);
-        $otherModels[0] = $filename;
-        // 取得したデータのユーザIDを保持
-        $id = strstr($filename, '_', true);
-        echo $id;
-        $j = 1;
-
-        // その他のユーザーの最新のデータも配列に格納する
-        for ($i=1; $i < count($files); $i++) {
-            $tmp_name = basename($files[$i]);
-            $tmp_id = strstr($tmp_name, '_', true);
-
-            // tmp_idと異なるidが初めて現れたものを配列に格納する
-            if ($id != $tmp_id) {
-                $id = $tmp_id;
-                $otherModels[$j] = $tmp_name;
-                $j++;
-            }
+        for ($i=0; $i < count($res); $i++) {
+            $id = $res[$i]->user_id;
+            $other[$i] = UserModel::select('user_id', 'model_json')
+                    ->where('m_title', 'sample')
+                    ->where('user_id', $id)
+                    ->latest()
+                    ->first();
         }
-        print_r($otherModels);
-        print_r($files);
+
+        // ランダムでキー取得
+        $key = array_rand($other, 1);
+
+        $res = json_safe_encode($other[$key]->model_json);
+        return $res;
     }
 }

@@ -1,11 +1,18 @@
 /**
- * 自前ののCSS
+ * 自前のCSS
  */
 
  div.modelArea {
      height: 800px;
      width: 90%;
      margin: 50px;
+     border: #5c5c5c solid 1px;
+ }
+ div.refModelArea {
+     height: 400px;
+     width: 90%;
+     margin: 50px;
+     background-color: #ffffff;
      border: #5c5c5c solid 1px;
  }
 #operation {
