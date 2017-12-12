@@ -4296,7 +4296,7 @@
                 }
             ],
             "description": "Rapidly generate resources, migrations, models, and much more.",
-            "time": "2015-02-17T06:26:25+00:00"
+            "time": "2015-02-17 06:26:25"
         },
         {
             "name": "webmozart/assert",

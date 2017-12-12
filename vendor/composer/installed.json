@@ -4420,6 +4420,47 @@
         ]
     },
     {
+        "name": "way/generators",
+        "version": "dev-feature/laravel-five-stable",
+        "version_normalized": "dev-feature/laravel-five-stable",
+        "source": {
+            "type": "git",
+            "url": "git@github.com:jamisonvalenta/Laravel-4-Generators.git",
+            "reference": "a358bb44f517e2b3c1fd4f848f2646857c75b3a4"
+        },
+        "require": {
+            "illuminate/support": "~5.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "behat/behat": "~2.5.1",
+            "behat/mink": "~1.5.0",
+            "behat/mink-extension": "~1.2.0",
+            "behat/mink-goutte-driver": "~1.0.9",
+            "behat/mink-selenium2-driver": "~1.1.1",
+            "phpspec/phpspec": "~2.0",
+            "phpunit/phpunit": "~3.7"
+        },
+        "time": "2015-02-17T06:26:25+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Way\\Generators": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jeffrey Way",
+                "email": "jeffrey@jeffrey-way.com"
+            }
+        ],
+        "description": "Rapidly generate resources, migrations, models, and much more."
+    },
+    {
         "name": "maximebf/debugbar",
         "version": "v1.14.1",
         "version_normalized": "1.14.1.0",
@@ -4551,46 +4592,5 @@
             "profiler",
             "webprofiler"
         ]
-    },
-    {
-        "name": "way/generators",
-        "version": "dev-feature/laravel-five-stable",
-        "version_normalized": "dev-feature/laravel-five-stable",
-        "source": {
-            "type": "git",
-            "url": "git@github.com:jamisonvalenta/Laravel-4-Generators.git",
-            "reference": "a358bb44f517e2b3c1fd4f848f2646857c75b3a4"
-        },
-        "require": {
-            "illuminate/support": "~5.0",
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "behat/behat": "~2.5.1",
-            "behat/mink": "~1.5.0",
-            "behat/mink-extension": "~1.2.0",
-            "behat/mink-goutte-driver": "~1.0.9",
-            "behat/mink-selenium2-driver": "~1.1.1",
-            "phpspec/phpspec": "~2.0",
-            "phpunit/phpunit": "~3.7"
-        },
-        "time": "2015-02-17T06:26:25+00:00",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Way\\Generators": "src/"
-            }
-        },
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jeffrey Way",
-                "email": "jeffrey@jeffrey-way.com"
-            }
-        ],
-        "description": "Rapidly generate resources, migrations, models, and much more."
     }
 ]
