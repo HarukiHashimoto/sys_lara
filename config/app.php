@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', TRUE),
 
     /*
     |--------------------------------------------------------------------------
@@ -163,6 +163,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        // Debugbar
+        Barryvdh\Debugbar\ServiceProvider::class,
+
         // Way\Generators\GeneratorsServiceProvider::class,
         // Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
 
@@ -227,6 +230,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        //barryvdh/laravel-debugbar
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
