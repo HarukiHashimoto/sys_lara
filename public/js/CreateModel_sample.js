@@ -426,7 +426,7 @@ function drawTags(netName) {
 //     console.log("aaaaaaa");
 // }
 
-// axion試用
+// axion使用
 $('.save_btn').on('click', saveJSON);
 
 function saveJSON() {
