@@ -331,8 +331,8 @@ function addTag() {
 }
 
 // タグの描画部分
-drawTags(network);
-function drawTags(netName) {
+drawTags(network, nodes, tagList);
+function drawTags(netName, nodes, tagList) {
     netName.on("afterDrawing", function (ctx) {
         if(nodes) {
             var haveTag = [];
@@ -491,3 +491,4 @@ function addData(target, data) {
         target.add(data[i]);
     }
 }
+console.log(tagList);
