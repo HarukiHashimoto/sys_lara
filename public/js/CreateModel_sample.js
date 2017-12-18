@@ -279,7 +279,6 @@ var tag = {
         }
     ]
 };
-console.log(tag.data[0].color);
 
 var tagList = {
     "data": [
@@ -295,6 +294,7 @@ $('.tag').on('click', addTag);
 function addTag() {
     var selectedId = network.getSelectedNodes()[0];
     var tagId = this.value;
+    console.log(tagId);
     var flag = 0;
     if (selectedId) {
         for (var i = 0; i < tagList.data.length; i++) {
@@ -328,7 +328,7 @@ function addTag() {
         }
     }
 
-}
+};
 
 // タグの描画部分
 drawTags(network, nodes, tagList);
@@ -336,28 +336,28 @@ function drawTags(netName, nodes, tagList) {
     netName.on("afterDrawing", function (ctx) {
         if(nodes) {
             var haveTag = [];
-            console.log('length:'+nodes.length);
+            // console.log('length:'+nodes.length);
             for (var i in nodes._data) {
-                console.log(nodes._data[i]);
+                // console.log(nodes._data[i]);
                 // console.log(nodes._data[i].group);
                 if (nodes._data[i] !== undefined) {
                     // console.log(nodes._data[i]);
                     if(nodes._data[i].group == 'instance' || nodes._data[i].group == 'state') {
                         haveTag.push(nodes._data[i].id);
-                        console.log('Tagsありノード'+nodes._data[i].id);
+                        // console.log('Tagsありノード'+nodes._data[i].id);
                     } else {
-                        console.log('Tags無いよ');
+                        // console.log('Tags無いよ');
                     }
                 } else {
-                    console.log(i+'undefined');
+                    // console.log(i+'undefined');
                     // i--;
                 }
             }
-            console.log(i);
+            // console.log(i);
         }
-        console.log('Tags長さ'+haveTag.length);
+        // console.log('Tags長さ'+haveTag.length);
         for (var i = 0; i < haveTag.length; i++) {
-            console.log('length_tag'+haveTag[i]);
+            // console.log('length_tag'+haveTag[i]);
             var nodeId = haveTag[i];
             var nodePosition = netName.getPositions([nodeId]);
             var tagPosition = netName.getBoundingBox(nodeId);
@@ -368,7 +368,7 @@ function drawTags(netName, nodes, tagList) {
             var width = 45;
             var height = 25;
 
-            console.log("ID: "+nodeId);
+            // console.log("ID: "+nodeId);
 
             for (var j = 0; j < 8; j++) {
                 ctx.fillStyle = '#f7f7f7';
@@ -382,17 +382,17 @@ function drawTags(netName, nodes, tagList) {
                     y = y + 30;
                 }
             }
-            console.log(tagList);
+            // console.log(tagList);
 
             for (var j in tagList.data) {
-                console.log(j);
+                // console.log(j);
                 // 初期値の設定
                 var x = 55;
                 var y = 10;
                 var width = 45;
                 var height = 25;
                 if(tagList.data[j].id == nodeId) {
-                    console.log(tagList.data[j].tag.length);
+                    // console.log(tagList.data[j].tag.length);
                     for (var k = 0; k < tagList.data[j].tag.length; k++) {
                         clrId = tagList.data[j].tag[k];
                         ctx.fillStyle = tag.data[clrId].color;
@@ -406,7 +406,7 @@ function drawTags(netName, nodes, tagList) {
                         ctx.fillText(tag.data[clrId].name, (tagPosition.right-x+25), (tagPosition.top+y+15));
 
                         x = x + 50;
-                        console.log("j:"+k);
+                        // console.log("j:"+k);
                         // 下段
                         if (k == 3) {
                             x = 55;
@@ -445,7 +445,7 @@ function saveJSON() {
 }
 
 var putParam = function(param) {
-    console.log(param);
+    // console.log(param);
 }
 
 var a = loadJSON(putParam);
@@ -453,7 +453,7 @@ var a = loadJSON(putParam);
 function loadJSON(callback) {
     var path = location.href.split("/");
     var title = path[path.length-1];
-    console.log(title);
+    // console.log(title);
     var res;
     var res = axios.post('load', {
         title: title
@@ -461,17 +461,17 @@ function loadJSON(callback) {
     .then(function(response) {
         var res = response.data;
         var data = JSON.parse(response.data);
-        console.log(data[0]);
+        // console.log(data[0]);
 
         if(data[1].id == "") {
             addData(nodes, data[0].nodes._data);
             addData(edges, data[0].edges._data);
-            console.log(data[1]);
+            // console.log(data[1]);
         } else {
             addData(nodes, data[1].nodes._data);
             addData(edges, data[1].edges._data);
             tagList = data[1].tagList;
-            console.log(tagList);
+            // console.log(tagList);
         }
         callback(res);
     })
