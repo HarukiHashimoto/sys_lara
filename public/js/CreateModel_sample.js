@@ -483,15 +483,16 @@ function loadJSON(callback) {
             addData(nodes, data[1].nodes._data);
             addData(edges, data[1].edges._data);
             tagList = data[1].tagList;
-            // console.log(tagList);
+            // タグの描画
+            drawTags(network, nodes, tagList);
         }
         callback(res);
     })
     .catch(function(error) {
         console.log(error);
     });
+
     network.redraw();
-    drawTags(network, nodes, tagList);
 };
 
 /**
