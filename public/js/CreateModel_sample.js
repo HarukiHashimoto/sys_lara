@@ -143,6 +143,15 @@ var options = {
 // initialize your network!
 var network = new vis.Network(container, data, options);
 
+var tagList = {
+    "data": [
+        {
+            "id": "",
+            "tag": []
+        },
+    ]
+};
+
 function editNode(data, callback) {
   document.getElementById('node-id').value = data.id;
   document.getElementById('node-label').value = data.label;
@@ -228,11 +237,10 @@ function saveEdgeData(data, callback) {
 $('.q_list').on('click', genQnode);
 
 function genQnode() {
-    id = nodes.length;
     label = this.textContent;
     title = this.id;
     nodes.add([
-        {id: id, label: label, group: "instance", title: title}
+        {label: label, group: "instance", title: title}
     ]);
     console.log(this.id);
     drawTags(network, nodes, tagList);
@@ -241,6 +249,7 @@ function genQnode() {
 
 $('body').on('load', function init() {
   setDefaultLocale();
+  drawTags(network, nodes, tagList);
   draw();
 });
 
@@ -282,14 +291,7 @@ var tag = {
     ]
 };
 
-var tagList = {
-    "data": [
-        {
-            "id": "",
-            "tag": []
-        },
-    ]
-};
+
 
 $('.tag').on('click', addTag);
 
