@@ -6,7 +6,7 @@ function getUniqueStr(myStrong){
  var strong = 1000;
  if (myStrong) strong = myStrong;
  return new Date().getTime().toString(16)  + Math.floor(strong*Math.random()).toString(16)
-}
+};
 
 var nodes = new vis.DataSet([
     // {id: 0, label: '治安', group: 'pre_node'},
@@ -150,18 +150,18 @@ function editNode(data, callback) {
   document.getElementById('node-saveButton').onclick = saveNodeData.bind(this, data, callback);
   document.getElementById('node-cancelButton').onclick = clearNodePopUp.bind();
   document.getElementById('node-popUp').style.display = 'block';
-}
+};
 
 function clearNodePopUp() {
   document.getElementById('node-saveButton').onclick = null;
   document.getElementById('node-cancelButton').onclick = null;
   document.getElementById('node-popUp').style.display = 'none';
-}
+};
 
 function cancelNodeEdit(callback) {
   clearNodePopUp();
   callback(null);
-}
+};
 
 function saveNodeData(data, callback) {
   document.getElementById('node-id').value = data.id;
@@ -170,7 +170,7 @@ function saveNodeData(data, callback) {
 
   clearNodePopUp();
   callback(data);
-}
+};
 
 function editEdgeWithoutDrag(data, callback) {
   // filling in the popup DOM elements
@@ -189,18 +189,18 @@ function editEdgeWithoutDrag(data, callback) {
   document.getElementById('edge-saveButton').onclick = saveEdgeData.bind(this, data, callback);
   document.getElementById('edge-cancelButton').onclick = cancelEdgeEdit.bind(this,callback);
   document.getElementById('edge-popUp').style.display = 'block';
-}
+};
 
 function clearEdgePopUp() {
   document.getElementById('edge-saveButton').onclick = null;
   document.getElementById('edge-cancelButton').onclick = null;
   document.getElementById('edge-popUp').style.display = 'none';
-}
+};
 
 function cancelEdgeEdit(callback) {
   clearEdgePopUp();
   callback(null);
-}
+};
 
 function saveEdgeData(data, callback) {
   if (typeof data.to === 'object')
@@ -223,7 +223,7 @@ function saveEdgeData(data, callback) {
 
   clearEdgePopUp();
   callback(data);
-}
+};
 
 $('.q_list').on('click', genQnode);
 
@@ -350,7 +350,7 @@ function drawTags(netName, nodes, tagList) {
                     }
                 } else {
                     // console.log(i+'undefined');
-                    // i--;
+                    i--;
                 }
             }
             // console.log(i);
@@ -442,11 +442,11 @@ function saveJSON() {
         console.log(error);
     });
     console.log("click & save!");
-}
+};
 
 var putParam = function(param) {
     // console.log(param);
-}
+};
 
 var a = loadJSON(putParam);
 
@@ -490,5 +490,4 @@ function addData(target, data) {
     for (var i in data) {
         target.add(data[i]);
     }
-}
-console.log(tagList);
+};
