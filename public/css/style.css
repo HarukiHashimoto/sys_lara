@@ -14,31 +14,42 @@ body {
     width: 100%;
 }
 
-#content {
+.content {
     width: 100%;
 }
 
-#wrapper {
-    max-width: 960px;
+.wrapper {
+    max-width: 1200px;
     width: auto;
     margin: 0 auto;
 }
 
+.build_right_area {
+    width: calc(70% - 36px);
+    float: left;
+    padding-left: 20px;
+    padding-right: 16px;
+}
 
+.build_left_area {
+    width: calc(30% - 36px);
+    float: left;
+    padding-left: 20px;
+    padding-right: 16px;
+}
 
 
  div.modelArea {
      height: 800px;
-     width: 90%;
-     margin: 50px;
+     width: auto;
      border: #5c5c5c solid 1px;
  }
  div.refModelArea {
-     height: 400px;
-     width: 90%;
-     margin: 50px;
+     height: 80%;
+     width: auto;
      background-color: #ffffff;
      border: #5c5c5c solid 1px;
+     top: 30px;
  }
 #operation {
   font-size:28px;
