@@ -235,6 +235,8 @@ function genQnode() {
         {id: id, label: label, group: "instance", title: title}
     ]);
     console.log(this.id);
+    drawTags(network, nodes, tagList);
+    network.redraw();
 };
 
 $('body').on('load', function init() {
@@ -294,11 +296,13 @@ $('.tag').on('click', addTag);
 function addTag() {
     var selectedId = network.getSelectedNodes()[0];
     var tagId = this.value;
-    console.log(tagId);
+    console.log(tagList);
+    console.log(selectedId);
     var flag = 0;
     if (selectedId) {
         for (var i = 0; i < tagList.data.length; i++) {
             var tags = tagList.data[i].tag;
+            console.log(tags);
             if (tagList.data[i].id == selectedId) {
                 /**
                  * 配列内に指定の要素があれば要素番号を返す．
@@ -306,14 +310,19 @@ function addTag() {
                  * @type number
                  */
                 var res = tags.indexOf(tagId);
+                console.log(res);
 
-                if (res != -1) {
+                if (res != -1) {    //  クリックされたタグがすでに付与されているものなら削除する
+                    console.log(tags);
                     tags.splice(res,1);
+                    console.log(tags);
+                    tagList.data[i].tag = tags;
                     network.redraw();
                     flag = 1;
 
-                } else {
+                } else {    //  タグがないなら追加する
                     tags.push(tagId);
+                    tagList.data[i].tag = tags;
                     network.redraw();
                     flag = 2;
                 }
@@ -327,6 +336,7 @@ function addTag() {
             network.redraw();
         }
     }
+    drawTags(network, nodes, tagList);
 
 };
 
@@ -479,7 +489,8 @@ function loadJSON(callback) {
         console.log(error);
     });
     network.redraw();
-}
+    drawTags(network, nodes, tagList);
+};
 
 /**
  *
