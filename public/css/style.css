@@ -24,14 +24,14 @@ body {
     margin: 0 auto;
 }
 
-.build_right_area {
+.build_left_area {
     width: calc(70% - 36px);
     float: left;
     padding-left: 20px;
     padding-right: 16px;
 }
 
-.build_left_area {
+.build_right_area {
     width: calc(30% - 36px);
     float: left;
     padding-left: 20px;
@@ -40,7 +40,7 @@ body {
 
 
  div.modelArea {
-     height: 800px;
+     height: 85vh;
      width: auto;
      border: #5c5c5c solid 1px;
  }
@@ -83,4 +83,8 @@ body {
   border-color: #5394ed;
   padding:10px;
   text-align: center;
+}
+
+.q_list_menu {
+    width: auto;
 }

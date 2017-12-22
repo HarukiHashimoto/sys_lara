@@ -12,7 +12,7 @@
                     {{ session('status') }}
                 </div>
             @endif
-            <div class="build_right_area">
+            <div class="build_left_area">
                 <div id="node-popUp">
                   <span id="node-operation">node</span> <br>
                   <table style="margin:auto;">
@@ -53,9 +53,7 @@
                 </div>
             </div>
 
-            <div class="build_left_area">
-                <br>
-                <br>
+            <div class="build_right_area">
                 <h5>タグの付与</h5>
                 <p>※選択中のノードにタグを付与します．</p>
                 <div class="ui inverted segment">
@@ -68,8 +66,6 @@
                     <button class="ui button inverted tag green" value="6">問い</button>
                     <button class="ui button inverted tag brown" value="7">答え</button>
                 </div>
-                <br>
-                <br>
                 <br>
                 <br>
                 <br>

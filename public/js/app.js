@@ -42859,6 +42859,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -42881,14 +42887,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
+    return _c("div", { staticClass: "q_list_menu" }, [
       _c("h5", [_vm._v("ソクラティックな問いリスト")]),
       _vm._v(" "),
       _c("div", { staticClass: "ui vertical menu" }, [
-        _c("div", { staticClass: "ui left pointing dropdown link item" }, [
+        _c("div", { staticClass: "ui dropdown link item" }, [
           _c("i", { staticClass: "dropdown icon" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "ui label" }, [_vm._v("3")]),
           _vm._v("\n            理由・根拠の問い\n            "),
-          _c("div", { staticClass: "menu" }, [
+          _c("div", { staticClass: "left menu" }, [
             _c("div", { staticClass: "item q_list", attrs: { id: "Ⅱ-1" } }, [
               _vm._v("なぜそう言えるのですか？")
             ]),
@@ -42903,8 +42911,10 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "ui left pointing dropdown link item" }, [
+        _c("div", { staticClass: "ui  dropdown link item" }, [
           _c("i", { staticClass: "dropdown icon" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "ui label" }, [_vm._v("4")]),
           _vm._v("\n            仮定の問い\n            "),
           _c("div", { staticClass: "menu" }, [
             _c("div", { staticClass: "item q_list", attrs: { id: "Ⅲ-1" } }, [
@@ -42925,8 +42935,10 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "ui left pointing dropdown link item" }, [
+        _c("div", { staticClass: "ui  dropdown link item" }, [
           _c("i", { staticClass: "dropdown icon" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "ui label" }, [_vm._v("3")]),
           _vm._v("\n            含意・結果の問い\n            "),
           _c("div", { staticClass: "menu" }, [
             _c("div", { staticClass: "item q_list", attrs: { id: "Ⅳ-1" } }, [
@@ -42943,8 +42955,10 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "ui left pointing dropdown link item" }, [
+        _c("div", { staticClass: "ui  dropdown link item" }, [
           _c("i", { staticClass: "dropdown icon" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "ui label" }, [_vm._v("3")]),
           _vm._v("\n            観点・見方の問い\n            "),
           _c("div", { staticClass: "menu" }, [
             _c("div", { staticClass: "item q_list", attrs: { id: "Ⅴ-1" } }, [
@@ -42961,8 +42975,10 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "ui left pointing dropdown link item" }, [
+        _c("div", { staticClass: "ui  dropdown link item" }, [
           _c("i", { staticClass: "dropdown icon" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "ui label" }, [_vm._v("6")]),
           _vm._v("\n            問いを吟味する問い\n            "),
           _c("div", { staticClass: "menu" }, [
             _c("div", { staticClass: "item q_list", attrs: { id: "Ⅵ-1" } }, [
@@ -42991,8 +43007,10 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "ui left pointing dropdown link item" }, [
+        _c("div", { staticClass: "ui  dropdown link item" }, [
           _c("i", { staticClass: "dropdown icon" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "ui label" }, [_vm._v("2")]),
           _vm._v("\n            起源・拠りどころの問い\n            "),
           _c("div", { staticClass: "menu" }, [
             _c("div", { staticClass: "item q_list", attrs: { id: "Ⅶ-1" } }, [

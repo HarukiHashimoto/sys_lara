@@ -1,18 +1,20 @@
 <template>
-    <div class="container">
+    <div class="q_list_menu">
         <h5>ソクラティックな問いリスト</h5>
         <div class="ui vertical menu">
-            <div class="ui left pointing dropdown link item">
+            <div class="ui dropdown link item">
                 <i class="dropdown icon"></i>
+                <div class="ui label">3</div>
                 理由・根拠の問い
-                <div class="menu">
+                <div class="left menu">
                     <div id="Ⅱ-1" class="item q_list">なぜそう言えるのですか？</div>
                     <div id="Ⅱ-2" class="item q_list">それが真実か，どうやって知ることができますか？</div>
                     <div id="Ⅱ-3" class="item q_list">別の理由は考えられますか？</div>
                 </div>
             </div>
-            <div class="ui left pointing dropdown link item">
+            <div class="ui  dropdown link item">
                 <i class="dropdown icon"></i>
+                <div class="ui label">4</div>
                 仮定の問い
                 <div class="menu">
                     <div id="Ⅲ-1" class="item q_list">何を仮定していますか？</div>
@@ -21,8 +23,9 @@
                     <div id="Ⅲ-4" class="item q_list">別の仮定を置くことはできますか？</div>
                 </div>
             </div>
-            <div class="ui left pointing dropdown link item">
+            <div class="ui  dropdown link item">
                 <i class="dropdown icon"></i>
+                <div class="ui label">3</div>
                 含意・結果の問い
                 <div class="menu">
                     <div id="Ⅳ-1" class="item q_list">どのような狙いがありますか？</div>
@@ -30,8 +33,9 @@
                     <div id="Ⅳ-3" class="item q_list">他のやり方，提案はありますか？</div>
                 </div>
             </div>
-            <div class="ui left pointing dropdown link item">
+            <div class="ui  dropdown link item">
                 <i class="dropdown icon"></i>
+                <div class="ui label">3</div>
                 観点・見方の問い
                 <div class="menu">
                     <div id="Ⅴ-1" class="item q_list">長期/短期的スパンで考えることはできますか？</div>
@@ -39,8 +43,9 @@
                     <div id="Ⅴ-3" class="item q_list">社会システムを良くするという視点から考えることはできますか？</div>
                 </div>
             </div>
-            <div class="ui left pointing dropdown link item">
+            <div class="ui  dropdown link item">
                 <i class="dropdown icon"></i>
+                <div class="ui label">6</div>
                 問いを吟味する問い
                 <div class="menu">
                     <div id="Ⅵ-1" class="item q_list">この問いは明確ですか？</div>
@@ -51,8 +56,9 @@
                     <div id="Ⅵ-6" class="item q_list">この問いの前に，答えるべき問いはありますか？</div>
                 </div>
             </div>
-            <div class="ui left pointing dropdown link item">
+            <div class="ui  dropdown link item">
                 <i class="dropdown icon"></i>
+                <div class="ui label">2</div>
                 起源・拠りどころの問い
                 <div class="menu">
                     <div id="Ⅶ-1" class="item q_list">あなたは何を問題視していますか？</div>
