@@ -342,7 +342,6 @@ function addTag() {
         }
     }
     drawTags(network, nodes, tagList);
-
 };
 
 // タグの描画部分
@@ -508,3 +507,6 @@ function addData(target, data) {
         target.add(data[i]);
     }
 };
+
+console.log(nodes._data);
+console.log(edges._data);
