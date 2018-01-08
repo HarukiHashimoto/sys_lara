@@ -231,6 +231,9 @@ function saveEdgeData(data, callback) {
   }
 
   clearEdgePopUp();
+  console.log(edges._data);
+  console.log(nodes._data);
+
   callback(data);
 };
 
