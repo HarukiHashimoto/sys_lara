@@ -507,6 +507,3 @@ function addData(target, data) {
         target.add(data[i]);
     }
 };
-
-console.log(nodes._data);
-console.log(edges._data);
