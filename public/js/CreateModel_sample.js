@@ -476,6 +476,8 @@ function loadJSON(callback) {
         var res = response.data;
         var data = JSON.parse(response.data);
         // console.log(data[0]);
+        //
+        // 
 
         if(data[1].id == "") {
             addData(nodes, data[0].nodes._data);
