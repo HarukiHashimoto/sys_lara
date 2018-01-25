@@ -243,6 +243,7 @@ function genQnode() {
         {label: label, group: "instance", title: title}
     ]);
     console.log(this.id);
+    console.log(nodes);
     drawTags(network, nodes, tagList);
     network.redraw();
 };
