@@ -178,8 +178,8 @@ function saveNodeData(data, callback) {
   data.id = document.getElementById('node-id').value;
   data.label = document.getElementById('node-label').value;
   data.group = document.getElementById('group').value;
-  console.log(nodes._data);
 
+  console.log(data);
   clearNodePopUp();
   callback(data);
 };
@@ -248,12 +248,6 @@ function genQnode() {
     nodes.add([
         {label: label, group: "instance", title: title}
     ]);
-    console.log(this.id);
-<<<<<<< HEAD
-    console.log(nodes);
-=======
-    console.log(nodes._data);
->>>>>>> c760475449c0cdbac3ce99a792708f1c7c4de75b
     drawTags(network, nodes, tagList);
     network.redraw();
 };
