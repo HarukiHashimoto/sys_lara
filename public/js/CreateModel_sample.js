@@ -154,7 +154,9 @@ var tagList = {
 
 function editNode(data, callback) {
   document.getElementById('node-id').value = data.id;
+  console.log(data.id);
   document.getElementById('node-label').value = data.label;
+  console.log(document.getElementById('group').value);
   document.getElementById('group').value = data.group;
   document.getElementById('node-saveButton').onclick = saveNodeData.bind(this, data, callback);
   document.getElementById('node-cancelButton').onclick = clearNodePopUp.bind();
@@ -173,9 +175,10 @@ function cancelNodeEdit(callback) {
 };
 
 function saveNodeData(data, callback) {
-  document.getElementById('node-id').value = data.id;
+  data.id = document.getElementById('node-id').value;
   data.label = document.getElementById('node-label').value;
   data.group = document.getElementById('group').value;
+  console.log(nodes._data);
 
   clearNodePopUp();
   callback(data);
@@ -246,6 +249,7 @@ function genQnode() {
         {label: label, group: "instance", title: title}
     ]);
     console.log(this.id);
+    console.log(nodes._data);
     drawTags(network, nodes, tagList);
     network.redraw();
 };
@@ -477,7 +481,7 @@ function loadJSON(callback) {
         var data = JSON.parse(response.data);
         // console.log(data[0]);
         //
-        // 
+        //
 
         if(data[1].id == "") {
             addData(nodes, data[0].nodes._data);
@@ -507,5 +511,6 @@ function loadJSON(callback) {
 function addData(target, data) {
     for (var i in data) {
         target.add(data[i]);
+        console.log(data[i]);
     }
 };
