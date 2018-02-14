@@ -1,7 +1,6 @@
 // console.log(model.link_list[1].factor1);
 // create an array with nodes
 
-
 function getUniqueStr(myStrong){
  var strong = 1000;
  if (myStrong) strong = myStrong;
@@ -95,10 +94,14 @@ var options = {
                 'align': 'left',
                 'size': 20
             },
-            height: {
+	    margin: 5,
+            heightConstraint: {
                 minimum: 100,
                 valign: 'bottom',
             },
+	    shapeProperties: {
+		borderDashes: false, // only for borders
+	    },
         },
         state: {
             shape: 'box',
@@ -106,7 +109,16 @@ var options = {
             font: {
                 'align': 'left',
                 'size': 20
-            }
+            },
+	    margin: 5,
+            heightConstraint: {
+                minimum: 100,
+                valign: 'bottom',
+            },
+	    shapeProperties: {
+		borderDashes: false, // only for borders
+	    },
+        
         },
     },
     manipulation: {
@@ -153,6 +165,7 @@ var tagList = {
 };
 
 function editNode(data, callback) {
+
   document.getElementById('node-id').value = data.id;
   console.log(data.id);
   document.getElementById('node-label').value = data.label;
