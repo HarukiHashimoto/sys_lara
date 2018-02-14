@@ -16,4 +16,5 @@
     <link href="{{ asset('js/vis.js/dist/vis-network.min.css') }}" rel='stylesheet' type="text/css"  />
     <link href="{{ asset('css/style.css') }}" rel='stylesheet' type="text/css"  />
     <link href="{{ asset('css/Semantic-UI-CSS/semantic.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sweetalert.css') }}" rel="stylesheet">
 </head>
