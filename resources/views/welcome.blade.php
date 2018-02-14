@@ -82,10 +82,18 @@
                     {{config('app.name')}}
                 </div>
 
+
                 <div class="links">
-                    <a href="login">Login</a>
-                    <a href="register">Register</a>
-                    <a href="build/sample">Builder</a>
+                    <!-- <a href="index.php/login">Login</a> -->
+                    <!-- <a href="index.php/register">Register</a> -->
+                    <!-- <a href="index.php/build/sample">Builder</a> -->
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('register') }}">Register</a>
+                    @endauth
+
                     <a href="https://github.com/HarukiHashimoto/sys_lara">GitHub</a>
                 </div>
             </div>

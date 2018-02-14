@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 // Route::get('/title', '')->name('title');
 //
 // Route::get('/build/model/{id}/{user_id}', '')->name('build');
