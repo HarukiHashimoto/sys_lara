@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function selectTheme()
+    {
+        return view('select_theme');
+    }
 }

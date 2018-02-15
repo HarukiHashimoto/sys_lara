@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 //
 // Route::get('/build/model/{id}/{user_id}', '')->name('build');
 
+Route::get('theme', 'HomeController@selectTheme')->name('select_theme');
+
 Route::get('build/sample', 'BuildController@build_smp')->name('build_smp');
 
 Route::post('build/save', 'BuildController@save_model')->name('save_model');
