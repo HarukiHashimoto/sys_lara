@@ -17,8 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function() {
+    return redirect('theme');
+});
 
 // Route::get('/title', '')->name('title');
 //
@@ -26,10 +28,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('theme', 'HomeController@selectTheme')->name('select_theme');
 
-Route::get('build/sample', 'BuildController@build_smp')->name('build_smp');
+Route::get('build/ir', 'BuildController@build_smp')->name('build_smp');
+
+Route::get('build/genpatsu', 'BuildController@build_smp')->name('build_smp');
 
 Route::post('build/save', 'BuildController@save_model')->name('save_model');
 
 Route::post('build/load', 'BuildController@load_model')->name('load_model');
 
-Route::get('build/loadOthers', 'BuildController@load_others_model')->name('load_others_model');
+Route::post('build/loadOthers', 'BuildController@load_others_model')->name('load_others_model');

@@ -33,7 +33,7 @@
                         <li><a href="{{ route('register') }}">Register</a></li>
                     @else
                         <li>
-                            <a href="{{ route('build_smp') }}">Build</a>
+                            <a href="{{ route('select_theme') }}">Modeling</a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

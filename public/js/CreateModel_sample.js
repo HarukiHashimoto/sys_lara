@@ -459,10 +459,13 @@ function drawTags(netName, nodes, tagList) {
 $('.save_btn').on('click', saveJSON);
 
 function saveJSON() {
+    var path = location.href.split("/");
+    var title = path[path.length-1];
     axios.post('save', {
         nodes: nodes,
         edges: edges,
-        tagList: tagList
+        tagList: tagList,
+        title: title
     })
     .then(function(response) {
         console.log(response);
@@ -470,7 +473,6 @@ function saveJSON() {
     .catch(function(error) {
         console.log(error);
     });
-    console.log("click & save!");
 };
 
 var putParam = function(param) {

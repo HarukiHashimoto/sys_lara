@@ -15,7 +15,7 @@
                         <img src="{{asset('image/genpatsu.jpeg')}}">
                     </div>
                     <div class="content">
-                        <a class="header">原子力発電所について</a>
+                        <a class="header" href="build/genpatsu">原子力発電所について</a>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                         <img src="{{asset('image/IR.jpg')}}">
                     </div>
                     <div class="content">
-                        <a class="header">IR施設の誘致について</a>
+                        <a class="header" href="build/ir">IR施設の誘致について</a>
                     </div>
                 </div>
             </div>

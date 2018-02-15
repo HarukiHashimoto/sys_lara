@@ -39,9 +39,11 @@ class BuildController extends Controller
 
         $user_model = UserModel::first();
 
+        $m_title = Request::post('title');
+
         $user_model = new UserModel;
         // ｍ_titleは教材ごとに変更する予定
-        $user_model->m_title = "sample";
+        $user_model->m_title = $m_title;
         $user_model->user_id = auth::id();
         $user_model->model_json = $arr;
         $user_model->save();
@@ -65,16 +67,17 @@ class BuildController extends Controller
     {
         $user_id = auth::id();
         $m_title = Request::post('title');
+        \Debugbar::info($m_title);
 
         // ログイン中のユーザーが作成したモデルで，最新のものを取得する
-        $res = UserModel::where('m_title', 'sample')->where('user_id', $user_id)->latest('created_at')->first();
+        $res = UserModel::where('m_title', $m_title)->where('user_id', $user_id)->latest('created_at')->first();
         if($res == NULL) {
             $res = '{"id":""}';
         } else {
             $res = $res->model_json;
         }
         // givenノードの読み込み
-        $given = UserModel::where('m_title', 'sample')->where('user_id', 'given')->first();
+        $given = UserModel::where('m_title', $m_title)->where('user_id', 'given')->first();
         $res = '['.$given->model_json.','.$res.']';
         $res = json_safe_encode($res);
         return $res;
@@ -83,26 +86,35 @@ class BuildController extends Controller
     public function load_others_model()
     {
         $user_id = auth::id();
+        $m_title = Request::post('title');
+
+        // $m_title = "genpatsu";
         // ログイン中のユーザー以外の作成したモデルを取得
         $res = UserModel::select('user_id')
-                ->where('m_title', 'sample')
+                ->where('m_title', $m_title)
                 ->whereNotIn('user_id', [$user_id, 'given'])
                 ->groupBy('user_id')
                 ->get();
+        \Debugbar::info(count($res));
 
-        for ($i=0; $i < count($res); $i++) {
-            $id = $res[$i]->user_id;
-            $other[$i] = UserModel::select('user_id', 'model_json')
-                    ->where('m_title', 'sample')
-                    ->where('user_id', $id)
-                    ->latest()
-                    ->first();
+        if (count($res)!=0) {
+            for ($i=0; $i < count($res); $i++) {
+                $id = $res[$i]->user_id;
+                $other[$i] = UserModel::select('user_id', 'model_json')
+                        ->where('m_title', $m_title)
+                        ->where('user_id', $id)
+                        ->latest()
+                        ->first();
+            }
+
+            // ランダムでキー取得
+            $key = array_rand($other, 1);
+
+            $res = json_safe_encode($other[$key]->model_json);
+
+            return $res;
+        } else {
+            return 0;
         }
-
-        // ランダムでキー取得
-        $key = array_rand($other, 1);
-
-        $res = json_safe_encode($other[$key]->model_json);
-        return $res;
     }
 }
