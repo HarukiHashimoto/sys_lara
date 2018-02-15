@@ -13,12 +13,12 @@
     // // タイムアウト設定
     // setTimeout(n.close.bind(n), 5000);
 // };
+
 $('.save_btn').click(function(){
-    console.log('aaa');
+    // alert("保存しました");
     swal({
-         title: "Good job!",
-         text: "You clicked the button!",
-         icon: "success",
-         button: "Aww yiss!",
+        type: 'success',
+        title: "Save",
+        text: "You saved your model!",
      });
 });

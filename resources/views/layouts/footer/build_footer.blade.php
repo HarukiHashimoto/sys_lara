@@ -6,7 +6,8 @@
 <script type='text/javascript' src="{{ asset('js/CreateModel_sample.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/notification.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/LoadModelRand.js') }}"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/sweetalert2@7.12.0/dist/sweetalert2.all.js"></script>
+
 <script type="text/javascript">
     $('.ui.dropdown').dropdown();
 </script>
