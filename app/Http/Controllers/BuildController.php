@@ -26,6 +26,11 @@ class BuildController extends Controller
         return view('build_smp');
     }
 
+    public function build_b()
+    {
+        return view('build_b');
+    }
+
     /**
      * [モデルデータを受け取ってJSONファイルを書き出す]
      * @return [Null] [.jsonを書き出す]

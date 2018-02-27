@@ -28,9 +28,15 @@ Route::get('/home', function() {
 
 Route::get('theme', 'HomeController@selectTheme')->name('select_theme');
 
+// モデル構築ページ
 Route::get('build/ir', 'BuildController@build_smp')->name('build_smp');
 
 Route::get('build/genpatsu', 'BuildController@build_smp')->name('build_smp');
+
+// モデル構築ページ(支援なしver)
+Route::get('build/ir_b', 'BuildController@build_b')->name('build_b');
+
+Route::get('build/genpatsu_b', 'BuildController@build_b')->name('build_b');
 
 Route::post('build/save', 'BuildController@save_model')->name('save_model');
 
