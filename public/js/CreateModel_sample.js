@@ -231,7 +231,7 @@ $('.q_list').on('click', genQnode);
 
 function genQnode() {
     label = this.textContent;
-    title = this.id;
+    title = this.textContent;
     nodes.add([
         {label: label, group: "instance", title: title}
     ]);
