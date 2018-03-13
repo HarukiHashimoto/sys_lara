@@ -16,5 +16,9 @@
         "lodash": "^4.17.4",
         "vue": "^2.1.10"
     },
-    "dependencies": {}
+    "dependencies": {
+        "express": "4.16.3",
+        "marked-terminal": "2.0.0",
+        "npm": "5.7.1"
+    }
 }
