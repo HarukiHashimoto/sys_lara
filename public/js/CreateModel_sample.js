@@ -34,14 +34,16 @@ var options = {
     },
     edges: {
         arrows: 'to',
+        smooth: false,
     },
     physics: {
         // enabled: false,
         barnesHut: {
-            centralGravity: 0.01,
-            springLength: 400,
+            centralGravity: 0,
+            springLength: 300,
+            springConstant: 0,
         },
-        timestep:0.3
+        timestep:1
     },
     groups: {
         given: {
