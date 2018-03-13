@@ -71,8 +71,8 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="index.php/login">Login</a>
+                        <a href="index.php/register">Register</a>
                     @endauth
                 </div>
             @endif
@@ -90,8 +90,8 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="index.php/login">Login</a>
+                        <a href="index.php/register">Register</a>
                     @endauth
 
                     <a href="https://github.com/HarukiHashimoto/sys_lara">GitHub</a>
