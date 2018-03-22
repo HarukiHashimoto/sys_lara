@@ -42890,13 +42890,15 @@ var staticRenderFns = [
     return _c("div", { staticClass: "q_list_menu" }, [
       _c("h5", [_vm._v("ソクラティックな問いリスト")]),
       _vm._v(" "),
-      _c("div", { staticClass: "ui vertical menu" }, [
-        _c("div", { staticClass: "ui dropdown link item" }, [
-          _c("i", { staticClass: "dropdown icon" }),
+      _c("div", { staticClass: "ui vertical menu massive" }, [
+        _c("div", { staticClass: "ui dropdown link fluid selection" }, [
+          _c("span", { staticClass: "text" }, [_vm._v("理由・根拠の問い")]),
           _vm._v(" "),
           _c("div", { staticClass: "ui label" }, [_vm._v("3")]),
-          _vm._v("\n            理由・根拠の問い\n            "),
-          _c("div", { staticClass: "left menu" }, [
+          _vm._v(" "),
+          _c("i", { staticClass: "dropdown icon" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "menu" }, [
             _c("div", { staticClass: "item q_list", attrs: { id: "Ⅱ-1" } }, [
               _vm._v("なぜそう言えるのですか？")
             ]),
@@ -42911,11 +42913,13 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "ui  dropdown link item" }, [
+        _c("div", { staticClass: "ui  dropdown link fluid selection" }, [
+          _c("span", { staticClass: "text" }, [_vm._v("仮定の問い")]),
+          _vm._v(" "),
           _c("i", { staticClass: "dropdown icon" }),
           _vm._v(" "),
           _c("div", { staticClass: "ui label" }, [_vm._v("4")]),
-          _vm._v("\n            仮定の問い\n            "),
+          _vm._v(" "),
           _c("div", { staticClass: "menu" }, [
             _c("div", { staticClass: "item q_list", attrs: { id: "Ⅲ-1" } }, [
               _vm._v("何を仮定していますか？")
@@ -42935,11 +42939,13 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "ui  dropdown link item" }, [
+        _c("div", { staticClass: "ui  dropdown fluid selection" }, [
+          _c("span", { staticClass: "text" }, [_vm._v("含意・結果の問い")]),
+          _vm._v(" "),
           _c("i", { staticClass: "dropdown icon" }),
           _vm._v(" "),
           _c("div", { staticClass: "ui label" }, [_vm._v("3")]),
-          _vm._v("\n            含意・結果の問い\n            "),
+          _vm._v(" "),
           _c("div", { staticClass: "menu" }, [
             _c("div", { staticClass: "item q_list", attrs: { id: "Ⅳ-1" } }, [
               _vm._v("どのような狙いがありますか？")
@@ -42955,11 +42961,13 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "ui  dropdown link item" }, [
+        _c("div", { staticClass: "ui  dropdown fluid selection" }, [
+          _c("span", { staticClass: "text" }, [_vm._v("観点・見方の問い")]),
+          _vm._v(" "),
           _c("i", { staticClass: "dropdown icon" }),
           _vm._v(" "),
           _c("div", { staticClass: "ui label" }, [_vm._v("3")]),
-          _vm._v("\n            観点・見方の問い\n            "),
+          _vm._v(" "),
           _c("div", { staticClass: "menu" }, [
             _c("div", { staticClass: "item q_list", attrs: { id: "Ⅴ-1" } }, [
               _vm._v("長期/短期的スパンで考えることはできますか？")
@@ -42975,11 +42983,13 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "ui  dropdown link item" }, [
+        _c("div", { staticClass: "ui  dropdown fluid selection" }, [
+          _c("span", { staticClass: "text" }, [_vm._v("問いを吟味する問い")]),
+          _vm._v(" "),
           _c("i", { staticClass: "dropdown icon" }),
           _vm._v(" "),
           _c("div", { staticClass: "ui label" }, [_vm._v("6")]),
-          _vm._v("\n            問いを吟味する問い\n            "),
+          _vm._v(" "),
           _c("div", { staticClass: "menu" }, [
             _c("div", { staticClass: "item q_list", attrs: { id: "Ⅵ-1" } }, [
               _vm._v("この問いは明確ですか？")
@@ -43007,11 +43017,13 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "ui  dropdown link item" }, [
+        _c("div", { staticClass: "ui  dropdown fluid selection" }, [
+          _c("span", { staticClass: "text" }, [_vm._v("起源・拠りどころの問い")]),
+          _vm._v(" "),
           _c("i", { staticClass: "dropdown icon" }),
           _vm._v(" "),
           _c("div", { staticClass: "ui label" }, [_vm._v("2")]),
-          _vm._v("\n            起源・拠りどころの問い\n            "),
+          _vm._v(" "),
           _c("div", { staticClass: "menu" }, [
             _c("div", { staticClass: "item q_list", attrs: { id: "Ⅶ-1" } }, [
               _vm._v("あなたは何を問題視していますか？")

@@ -17,8 +17,11 @@
         "vue": "^2.1.10"
     },
     "dependencies": {
+        "ajv": "6.3.0",
         "express": "4.16.3",
+        "marked": "0.3.17",
         "marked-terminal": "2.0.0",
+        "node-sass": "4.7.2",
         "npm": "5.7.1"
     }
 }
