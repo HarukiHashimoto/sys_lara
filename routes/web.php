@@ -43,3 +43,6 @@ Route::post('build/save', 'BuildController@save_model')->name('save_model');
 Route::post('build/load', 'BuildController@load_model')->name('load_model');
 
 Route::post('build/loadOthers', 'BuildController@load_others_model')->name('load_others_model');
+
+
+Route::get('obtain/moreSuggestions', 'obtainModelController@more_suggestion')->name('more_suggestion');
