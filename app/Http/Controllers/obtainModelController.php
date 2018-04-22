@@ -11,7 +11,17 @@ function json_safe_encode($data){
 }
 
 function search_q_a($user_model){
+    echo "<pre>";
+    // print_r($user_model->nodes);
+    foreach ($user_model->nodes->_data as $node) {
+        // print_r($node);
+        if ($node->group == 'instance') {
+            echo $node->label."<br />";
+            echo 'これは  「  <strong>'.$node->title.'</strong>  」  のインスタンスです<br /><br />';
+        }
+    }
     print_r($user_model);
+    echo "</pre>";
 }
 
 class obtainModelController extends Controller
@@ -38,22 +48,20 @@ class obtainModelController extends Controller
                         ->first();
             }
 
-
-
             for ($i=0; $i < count($other); $i++) {
                 $user[$i] = $other[$i]->user_id;
                 $model[$i] = json_decode($other[$i]->model_json);
-                print_r($model[$i]->nodes);
+
                 echo "ユーザID: ".$user[$i].":<br />";
-                echo "<pre>";
+
                 search_q_a($model[$i]);
-                echo "</pre>";
+
                 echo "<br />";
             }
 
-            for ($i=0; $i < count($other); $i++) {
-
-            }
+            // for ($i=0; $i < count($other); $i++) {
+            //
+            // }
 
             // ランダムでキー取得
             // $key = array_rand($other, 1);
