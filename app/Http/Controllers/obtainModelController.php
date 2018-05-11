@@ -19,28 +19,27 @@ function search_q_a($user_id, $user_model){
             if ($node->group == 'instance') {
                 echo $user_id[$i]."<br />";
                 echo $node->label."<br />";
-                echo 'これは  「  <strong>'.$node->title.'</strong>  」  のインスタンスです<br /><br />';
+                echo 'これは  「  <strong>'.$node->title.'</strong>  」  のインスタンスです<br />';
                 get_q_link($node, $user_model[$i]);
             }
         }
-
 
         echo "</pre>";
     }
 }
 
 function get_q_link($q_node, $user_model){
-    echo "<br />ここ";
-
+    echo "ここ";
+    $rscs = [];
     // 問いを"to"に持つエッジを検索
     foreach($user_model->edges->_data as $edge) {
         if ($edge->to == $q_node->id) {
-            print_r($edge->from);
-            print_r($user_model->nodes->_data[$edge->to]);
+            $rsc = $user_model->nodes->_data->{$edge->from}->label;
+            array_push($rscs, $rsc);
         }
     }
-    echo "<br />";
-
+    print_r($rscs);
+    echo "<br /><br />";
 }
 
 class obtainModelController extends Controller
