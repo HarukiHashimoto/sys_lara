@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 use App\UserModel;
 use Request;
 
-// オブジェクトをJSON形式へ変換する（日本語をunicodeのままで整形して．）
-function json_safe_encode($data){
-    return json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
-}
+//// オブジェクトをJSON形式へ変換する（日本語をunicodeのままで整形して．）
+//function json_safe_encode($data){
+//    return json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+//}
 
 function search_q_a($user_id, $user_model){
+    echo "<pre>";
+    print_r($user_model);
     for ($i=0; $i < count($user_id); $i++) {
-        echo "<pre>";
+
         // print_r($user_model->nodes);
         foreach ($user_model[$i]->nodes->_data as $node) {
             // print_r($node);
@@ -20,7 +22,8 @@ function search_q_a($user_id, $user_model){
                 echo $user_id[$i]."<br />";
                 echo $node->label."<br />";
                 echo 'これは  「  <strong>'.$node->title.'</strong>  」  のインスタンスです<br />';
-                get_q_link($node, $user_model[$i]);
+                $rscs = get_q_link($node, $user_model[$i]);
+                print_r($rscs);
             }
         }
 
@@ -38,8 +41,7 @@ function get_q_link($q_node, $user_model){
             array_push($rscs, $rsc);
         }
     }
-    print_r($rscs);
-    echo "<br /><br />";
+    return $rscs;
 }
 
 class obtainModelController extends Controller
