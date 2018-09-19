@@ -1,4 +1,4 @@
-# Critical Thinking Learn by Modeling and Sharing
+# Critical Thinking Learning by Modeling and Sharing
 
 ### Commit Massage
 
