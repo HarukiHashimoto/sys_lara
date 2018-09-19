@@ -54,23 +54,23 @@
             </div>
 
             <div class="build_right_area">
-                {{-- <h5>タグの付与</h5>
+                 <h5>タグの付与</h5>
                 <p>※選択中のノードにタグを付与します．</p>
                 <div class="ui inverted segment">
-                    <button class="ui button inverted tag yellow" value="0">提案</button>
-                    <button class="ui button inverted tag purple" value="1">指針</button>
-                    <button class="ui button inverted tag grey" value="2">結論</button>
-                    <button class="ui button inverted tag blue" value="3">問題</button>
-                    <button class="ui button inverted tag teal" value="4">関与者</button>
-                    <button class="ui button inverted tag red" value="5">懸念</button>
+                    <button class="ui button inverted tag yellow" value="0">理由・根拠</button>
+                    <button class="ui button inverted tag purple" value="1">視点・見方</button>
+                    <button class="ui button inverted tag grey" value="2">仮定</button>
+                    <button class="ui button inverted tag blue" value="3">結果</button>
+                    <button class="ui button inverted tag teal" value="4">事例</button>
+                    <button class="ui button inverted tag red" value="5">信念</button>
                     <button class="ui button inverted tag green" value="6">問い</button>
-                    <button class="ui button inverted tag brown" value="7">答え</button>
+                    <button class="ui button inverted tag brown" value="7">提案</button>
                 </div>
                 <br>
                 <br>
                 <br>
-                問いリスト
-                <qlist></qlist> --}}
+                {{--問いリスト--}}
+                <qlist></qlist>
                 <br>
                 <br>
                 <br>

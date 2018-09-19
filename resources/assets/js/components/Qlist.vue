@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="ui  dropdown fluid selection">
-                <span class="text">観点・見方の問い</span>
+                <span class="text">視点・見方の問い</span>
                 <i class="dropdown icon"></i>
                 <div class="ui label">3</div>
                 <div class="menu">

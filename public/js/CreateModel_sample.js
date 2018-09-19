@@ -265,27 +265,27 @@ $('body').on('load', function init() {
 // タグを格納する配列
 var tag = {
     "data": [{
-            'name': '提案',
+            'name': '理由',
             'color': '#FFFC79',
         },
         {
-            'name': '指針',
+            'name': '視点',
             'color': '#bf85d7'
         },
         {
-            'name': '結論',
+            'name': '仮定',
             'color': '#D6D6D6'
         },
         {
-            'name': '問題',
+            'name': '結果',
             'color': '#7A81FF'
         },
         {
-            'name': '関与者',
+            'name': '事例',
             'color': '#C0E9FF'
         },
         {
-            'name': '懸念',
+            'name': '信念',
             'color': '#ffa8a8'
         },
         {
@@ -293,7 +293,7 @@ var tag = {
             'color': '#4BE64A'
         },
         {
-            'name': '答え',
+            'name': '提案',
             'color': '#F9AE64'
         }
     ]
