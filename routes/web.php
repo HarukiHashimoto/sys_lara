@@ -33,16 +33,16 @@ Route::get('build/ir', 'BuildController@build_smp')->name('build_smp');
 
 Route::get('build/genpatsu', 'BuildController@build_smp')->name('build_smp');
 
-// モデル構築ページ(支援なしver)
+// モデル構築ページ(開発中ver)
 Route::get('build/ir_b', 'BuildController@build_b')->name('build_b');
 
 Route::get('build/genpatsu_b', 'BuildController@build_b')->name('build_b');
 
+//  モデルのSave, Load
 Route::post('build/save', 'BuildController@save_model')->name('save_model');
 
 Route::post('build/load', 'BuildController@load_model')->name('load_model');
 
 Route::post('build/loadOthers', 'BuildController@load_others_model')->name('load_others_model');
-
 
 Route::get('obtain/moreSuggestions', 'obtainModelController@more_suggestion')->name('more_suggestion');
